@@ -150,7 +150,7 @@
     /* lockup Black Friday (imagem em alta) */
     .bf-wrap { position: relative; width: 100%; max-width: 600px; margin: 4px 0 4px -10px; }
     .bf-wrap::before {
-      content: ''; position: absolute; left: 50%; top: 50%; width: 92%; aspect-ratio: 1; transform: translate(-50%,-50%);
+      display: none; content: ''; position: absolute; left: 50%; top: 50%; width: 92%; aspect-ratio: 1; transform: translate(-50%,-50%);
       border-radius: 50%; border: 3px solid rgba(255,140,0,0.5);
       box-shadow: 0 0 50px rgba(255,120,0,0.45), inset 0 0 50px rgba(255,120,0,0.3);
       opacity: 0.35; z-index: -1; animation: ring 6s ease-in-out infinite;
@@ -171,32 +171,21 @@
       font-size: clamp(1.5rem, 2.6vw, 2.15rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em;
       max-width: 560px; margin-top: 6px;
     }
-    .hero-title .hl { color: #FFB066; }
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-    /* preço */
-    .price-row { display: flex; align-items: center; gap: 14px; margin: 14px 0 14px; flex-wrap: wrap; }
-    .price-lead { white-space: nowrap; font-size: clamp(1rem, 1.5vw, 1.2rem); font-weight: 600; color: var(--muted); align-self: flex-end; margin-bottom: 0.55em; }
-    .price {
-      display: inline-flex; align-items: flex-start; line-height: 0.85;
-      color: var(--orange);
-      text-shadow: 0 0 22px rgba(255,120,0,0.5), 0 0 50px rgba(255,90,0,0.25);
+    /* preço: etiqueta limpa, sem laranja sobre laranja */
+    .price-tag {
+      display: inline-flex; align-items: center; gap: 16px; margin-top: 20px;
+      padding: 12px 22px 12px 18px; border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      box-shadow: inset 3px 0 0 var(--orange), 0 14px 34px rgba(0,0,0,0.45);
     }
-    .price-cur { font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 800; margin-top: 0.3em; margin-right: 5px; }
-    .price-num { font-size: clamp(3.4rem, 5.6vw, 4.6rem); font-weight: 900; letter-spacing: -0.05em; }
-    .price-per { font-size: clamp(0.95rem, 1.4vw, 1.15rem); font-weight: 800; align-self: flex-end; margin-bottom: 0.4em; margin-left: 4px; color: #FFB066; }
-
-    .stamp {
-      display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
-      transform: rotate(-7deg); animation: stampFloat 4s ease-in-out infinite;
-      background: #0A0A0A; border: 2px dashed var(--orange);
-      box-shadow: 0 0 0 4px #0A0A0A, 0 0 0 5px rgba(255,140,0,0.7), 0 12px 30px rgba(0,0,0,0.6), 0 0 26px rgba(255,120,0,0.3);
-      border-radius: 10px; padding: 8px 13px; text-align: center; text-transform: uppercase;
-    }
-    .stamp b { white-space: nowrap; font-size: 0.9rem; font-weight: 900; color: var(--orange); letter-spacing: 0.06em; }
-    .stamp span { white-space: nowrap; font-size: 0.64rem; font-weight: 700; color: var(--white); letter-spacing: 0.14em; margin-top: 2px; }
-    @keyframes stampFloat { 50% { transform: rotate(-4deg) translateY(-4px); } }
-
+    .pt-lead { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .pt-val { display: inline-flex; align-items: flex-start; font-size: clamp(2.6rem, 4.2vw, 3.4rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.04em; color: var(--white); white-space: nowrap; }
+    .pt-val small { font-size: 0.36em; font-weight: 800; margin: 0.22em 5px 0 0; letter-spacing: 0; color: var(--muted); }
+    .pt-val em { font-style: normal; font-size: 0.34em; font-weight: 700; align-self: flex-end; margin: 0 0 0.3em 4px; letter-spacing: 0; color: var(--muted); }
     .hero-sub { font-size: 0.98rem; color: var(--muted); line-height: 1.6; max-width: 500px; }
     .hero-cta { margin-top: 24px; }
 
@@ -597,14 +586,9 @@
       .hero-bg::after { background: linear-gradient(180deg, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.6) 45%, #050505 75%), radial-gradient(ellipse 80% 40% at 50% 25%, rgba(255,110,0,0.25), transparent 70%); }
       .bf-wrap { max-width: 92%; }
       .hero-title { font-size: 1.22rem; line-height: 1.25; max-width: 340px; margin: 2px auto 0; }
-      .price-row { justify-content: center; gap: 7px; margin: 10px 0 8px; flex-wrap: nowrap; }
-      .price-lead { font-size: 0.8rem; }
-      .price-num { font-size: clamp(2.9rem, 14vw, 3.4rem); }
-      .price-cur { font-size: 1rem; }
-      .price-per { font-size: 0.85rem; }
-      .stamp { padding: 6px 9px; margin-left: 2px; }
-      .stamp b { font-size: 0.66rem; }
-      .stamp span { font-size: 0.54rem; }
+      .price-tag { gap: 12px; margin-top: 14px; padding: 10px 18px 10px 14px; }
+      .pt-lead { font-size: 0.66rem; }
+      .pt-val { font-size: 2.4rem; }
       .hero-sub { font-size: 0.84rem; line-height: 1.5; margin: 0 auto; max-width: 320px; }
       .hero-cta { margin-top: 16px; }
       .hero-cta .btn { width: 100%; padding: 16px 20px; }
@@ -677,20 +661,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <h1 class="hero-title">
         <span class="sr-only">Black Friday Techmax: </span>
-        Assessoria VIP com <span class="hl">consultoria técnica</span> e <span class="hl">suporte com concessionárias</span>
+        Assessoria VIP com consultoria técnica e suporte com concessionárias
       </h1>
-      <div class="price-row">
-        <span class="price-lead">por apenas</span>
-        <span class="price" aria-label="R$ 200 por mês"><span class="price-cur">R$</span><span class="price-num">200</span><span class="price-per">/mês</span></span>
-        <span class="stamp" aria-hidden="true"><b>Pré-Black</b><span>Condição VIP</span></span>
-      </div>
-      <p class="hero-sub">Inclui grupo de WhatsApp com a engenharia. Sem exclusividade e sem volume mínimo.</p>
-
-      <div class="hero-cta">
-        <a href="#form" class="btn">
-          Garantir minha vaga VIP
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+      <div class="price-tag" aria-label="Por apenas R$ 200 por mês">
+        <span class="pt-lead">por apenas</span>
+        <span class="pt-val"><small>R$</small>200<em>/mês</em></span>
       </div>
     </div>
 
