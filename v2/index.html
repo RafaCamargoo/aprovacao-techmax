@@ -37,7 +37,7 @@
     body {
       font-family: 'Poppins', system-ui, sans-serif; color: var(--white); position: relative;
       background: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px) 0 0 / 28px 28px, var(--bg);
-      overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.5;
+      -webkit-font-smoothing: antialiased; line-height: 1.5;
     }
     img { max-width: 100%; }
     /* brilhos de fundo contínuos: atravessam as seções, sem corte de luz */
@@ -56,11 +56,12 @@
     /* ── tipografia de seção: etiqueta + título curto ── */
     .tag {
       display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--orange); margin-bottom: 14px;
+      text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 14px;
     }
     .tag::before { content: ''; width: 18px; height: 2px; background: var(--orange); box-shadow: 0 0 8px var(--orange); }
-    .h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; }
-    .h2 em { font-style: normal; color: var(--orange); }
+    .h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; line-height: 1.12; letter-spacing: -0.025em; }
+    .h2 em { font-style: normal; font-weight: 800; color: var(--white); }
+    .h2 .hot { color: var(--orange); font-weight: 800; }
     .lead { font-size: 1.02rem; color: var(--muted); margin-top: 14px; max-width: 560px; }
     .head { margin-bottom: 52px; }
     .head.center { text-align: center; }
@@ -333,8 +334,8 @@
     .plat-steps { display: grid; gap: 0; }
     .p-step { min-height: 52vh; display: flex; flex-direction: column; justify-content: center; opacity: .28; transition: opacity .5s; }
     .p-step.on { opacity: 1; }
-    .p-num { font-size: .78rem; font-weight: 800; letter-spacing: .2em; color: var(--orange); }
-    .p-step h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; line-height: 1.15; margin: 8px 0 10px; }
+    .p-num { font-size: .78rem; font-weight: 800; letter-spacing: .2em; color: rgba(255,255,255,.55); }
+    .p-step h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; line-height: 1.15; margin: 8px 0 10px; }
     .p-step p { color: var(--muted); max-width: 440px; }
     .plat-intro { min-height: 0; padding-top: 10vh; opacity: 1; }
     .p-shot { display: none; }
@@ -761,7 +762,7 @@
     <div>
       <div class="head" style="margin-bottom:0;">
         <span class="tag rv">Como começa</span>
-        <h2 class="h2 rv d1">Em menos de uma semana, <em>sua engenharia rodando.</em></h2>
+        <h2 class="h2 rv d1">Em <span class="hot">menos de uma semana</span>, <em>sua engenharia rodando.</em></h2>
       </div>
       <div class="timeline rv d2" id="timeline">
         <div class="bar"></div>
