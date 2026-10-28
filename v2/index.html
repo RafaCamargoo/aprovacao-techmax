@@ -35,10 +35,15 @@
     html { scroll-behavior: smooth; }
     html, body { overflow-x: clip; }
     body {
-      font-family: 'Poppins', system-ui, sans-serif; background: var(--bg); color: var(--white);
+      font-family: 'Poppins', system-ui, sans-serif; color: var(--white); position: relative;
+      background: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px) 0 0 / 28px 28px, var(--bg);
       overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.5;
     }
     img { max-width: 100%; }
+    /* brilhos de fundo contínuos: atravessam as seções, sem corte de luz */
+    .glows { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .glows i { position: absolute; width: 1100px; height: 1100px; border-radius: 50%; transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(255,110,0,0.16) 0%, rgba(255,90,31,0.06) 40%, transparent 68%); }
     section, .zebra, footer { position: relative; z-index: 1; }
     .wrap { max-width: 1160px; margin: 0 auto; }
     section { padding: 100px 5%; }
@@ -91,7 +96,7 @@
 
     /* ══════════ HERO ══════════ */
     .hero { min-height: 100svh; display: flex; align-items: center; padding: 40px 5% 80px; overflow: hidden;
-      background: radial-gradient(ellipse 60% 55% at 28% 40%, rgba(255,110,0,0.22), transparent 70%), radial-gradient(ellipse 40% 40% at 85% 15%, rgba(255,90,31,0.10), transparent 70%), var(--bg); }
+      background: transparent; }
     .floor { position: absolute; left: -20%; right: -20%; bottom: -12%; height: 55%; z-index: 0; pointer-events: none;
       background-image: linear-gradient(rgba(255,140,0,0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(255,140,0,0.16) 1px, transparent 1px);
       background-size: 70px 70px; transform: perspective(500px) rotateX(62deg); transform-origin: center top;
@@ -101,20 +106,21 @@
     .embers { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
     .embers i { position: absolute; bottom: -10px; width: 3px; height: 3px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 8px 2px rgba(255,140,0,0.8); opacity: 0; animation: ember linear infinite; }
     @keyframes ember { 0% { transform: translate(0,0); opacity: 0; } 10% { opacity: 1; } 100% { transform: translate(var(--dx), -95vh); opacity: 0; } }
-    .hero-grid { position: relative; z-index: 2; width: 100%; max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center; }
+    .hero-grid { position: relative; z-index: 2; width: 100%; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 540px 460px; justify-content: space-between; gap: 48px; align-items: center; }
     .hero-grid > * { min-width: 0; }
     .logo { height: 44px; width: auto; display: block; margin-bottom: 8px; }
-    .bf { position: relative; max-width: 700px; margin-left: -10px; }
+    .hero-copy { max-width: 540px; }
+    .bf { position: relative; width: 107.7%; margin-left: -4.4%; }
     .bf img { display: block; width: 100%; height: auto; }
     .bf .on { filter: drop-shadow(0 0 18px rgba(255,110,0,0.45)) drop-shadow(0 18px 30px rgba(0,0,0,0.6)); animation: neon 4s ease-in-out infinite, bfOn 6s linear infinite; }
     .bf .off { position: absolute; inset: 0; opacity: 0; filter: drop-shadow(0 18px 30px rgba(0,0,0,0.6)); animation: bfOff 6s linear infinite; }
     @keyframes neon { 0%,100% { filter: drop-shadow(0 0 14px rgba(255,110,0,0.4)) drop-shadow(0 18px 30px rgba(0,0,0,0.6)); } 50% { filter: drop-shadow(0 0 30px rgba(255,120,0,0.75)) drop-shadow(0 18px 30px rgba(0,0,0,0.6)); } }
     @keyframes bfOff { 0%,42% { opacity: 0; } 42.5% { opacity: 1; } 44.5% { opacity: 0; } 46% { opacity: 1; } 50.5% { opacity: 1; } 51%,100% { opacity: 0; } }
     @keyframes bfOn { 0%,42% { opacity: 1; } 42.5% { opacity: 0; } 44.5% { opacity: 1; } 46% { opacity: 0; } 50.5% { opacity: 0; } 51%,100% { opacity: 1; } }
-    .h1 { font-size: clamp(1.6rem, 2.6vw, 2.5rem); line-height: 1.2; letter-spacing: -0.02em; max-width: 640px; margin-top: 4px; font-weight: 300; }
+    .h1 { font-size: clamp(1.5rem, 2.2vw, 2.05rem); line-height: 1.22; letter-spacing: -0.02em; margin-top: 2px; font-weight: 300; }
     .h1 b { font-weight: 800; }
     .price-tag {
-      position: relative; display: inline-flex; align-items: center; gap: 20px; margin-top: 24px; padding: 16px 28px 16px 22px; border-radius: 18px;
+      position: relative; display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 20px; margin-top: 24px; padding: 16px 28px 16px 22px; border-radius: 18px;
       background: linear-gradient(135deg, rgba(255,140,0,0.16), rgba(255,255,255,0.03) 55%); border: 1px solid rgba(255,140,0,0.55);
       box-shadow: inset 4px 0 0 var(--orange), 0 0 40px rgba(255,110,0,0.25), 0 16px 40px rgba(0,0,0,0.5);
       animation: priceGlow 3.2s ease-in-out infinite, priceFlick 6s linear infinite;
@@ -127,8 +133,8 @@
     .pt-val { display: inline-flex; align-items: flex-start; font-size: clamp(3.2rem, 5.4vw, 4.6rem); font-weight: 900; line-height: .9; letter-spacing: -0.04em; white-space: nowrap; text-shadow: 0 0 24px rgba(255,140,0,0.35); }
     .pt-val small { font-size: .34em; font-weight: 800; margin: .22em 6px 0 0; letter-spacing: 0; color: rgba(255,255,255,.8); }
     .pt-val em { font-style: normal; font-size: .34em; font-weight: 700; align-self: flex-end; margin: 0 0 .3em 4px; letter-spacing: 0; color: rgba(255,255,255,.8); }
-    .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-    .pill { display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,.85); background: rgba(255,255,255,0.05); border: 1px solid var(--border); }
+    .hero-pills { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+    .pill { justify-content: flex-start; display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,.85); background: rgba(255,255,255,0.05); border: 1px solid var(--border); }
     .pill::before { content: '✓'; color: var(--orange); font-weight: 800; }
     .hero-cta-m { display: none; }
 
@@ -225,7 +231,6 @@
 
 
     /* ══════════ DOR ══════════ */
-    .dor { background: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px) 0 0 / 26px 26px, var(--bg2); }
     .dor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .dor-card { position: relative; padding: 28px 24px; border-radius: 20px; background: var(--card); border: 1px solid var(--border); overflow: hidden; }
     .dor-card .ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: rgba(255,90,31,0.12); color: #FF7A4D; margin-bottom: 18px; }
@@ -237,8 +242,12 @@
     .dor-card .fix::before { content: '✓'; flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: .75rem; color: #0A0A0A; background: var(--orange); }
 
     /* ══════════ CUPOM FISCAL ══════════ */
-    .cupom-sec { background: radial-gradient(ellipse 50% 45% at 50% 30%, rgba(255,120,0,0.16), transparent 70%), var(--bg); overflow: hidden; }
-    .cupom-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: center; }
+    .cupom-sec { overflow: hidden; }
+    .cond { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 760px; margin: 0 auto 40px; }
+    .cond div { text-align: center; padding: 16px 10px; border-radius: 16px; background: var(--card); border: 1px solid var(--border); }
+    .cond b { display: block; font-size: 2rem; font-weight: 900; line-height: 1; color: var(--orange); }
+    .cond span { display: block; font-size: .76rem; color: var(--muted); margin-top: 6px; }
+    .center-cta { text-align: center; margin-top: 44px; }
     .cupom-side .h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); }
     .cupom-side ul { list-style: none; margin-top: 26px; display: grid; gap: 12px; }
     .cupom-side li { position: relative; padding-left: 24px; font-weight: 600; }
@@ -277,7 +286,6 @@
     .stamp-paid.in { opacity: .92; transform: rotate(-14deg) scale(1); }
 
     /* ══════════ COMPARA (antes x depois) ══════════ */
-    .compara { background: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px) 0 0 / 26px 26px, var(--bg2); }
     .ba { position: relative; max-width: 980px; margin: 0 auto; border-radius: 24px; overflow: hidden; border: 1px solid var(--border); user-select: none; touch-action: pan-y; cursor: ew-resize; min-height: 430px; }
     .ba-side { position: absolute; inset: 0; padding: 38px 40px; display: flex; flex-direction: column; }
     .ba-old { background: linear-gradient(135deg, #191919, #0e0e0e); }
@@ -299,7 +307,7 @@
     .ba-hint { text-align: center; color: var(--muted); font-size: .82rem; margin-top: 16px; }
 
     /* ══════════ NÚMEROS ══════════ */
-    .nums { background: radial-gradient(ellipse 55% 50% at 50% 0%, rgba(255,120,0,0.14), transparent 70%), var(--bg); padding-bottom: 70px; }
+    .nums { padding-bottom: 70px; }
     .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .stat { text-align: center; padding: 30px 12px; border-radius: 20px; background: var(--card); border: 1px solid var(--border); }
     .stat b { display: block; font-size: clamp(2.2rem, 4.6vw, 3.4rem); font-weight: 900; letter-spacing: -.03em; line-height: 1; background: linear-gradient(180deg, #FFC27A, var(--orange) 55%, var(--orange2)); -webkit-background-clip: text; background-clip: text; color: transparent; font-variant-numeric: tabular-nums; }
@@ -310,7 +318,6 @@
     .chip::before { content: ''; width: 7px; height: 7px; border-radius: 2px; transform: rotate(45deg); background: var(--orange); }
 
     /* ══════════ PLATAFORMA (rolagem fixa) ══════════ */
-    .plat { background: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px) 0 0 / 26px 26px, var(--bg2); }
     .plat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
     .plat-stick { position: sticky; top: 12vh; height: 76vh; display: grid; place-items: center; }
     .phone { position: relative; width: min(300px, 70%); aspect-ratio: 520 / 1028; border-radius: 40px; background: #0A0A0A; border: 9px solid #0A0A0A; outline: 1px solid rgba(255,255,255,.18); box-shadow: 0 40px 80px rgba(0,0,0,.7), 0 0 80px rgba(255,110,0,.22); overflow: hidden; }
@@ -324,15 +331,16 @@
     .phone .ok i { display: grid; place-items: center; width: 84px; height: 84px; margin: 0 auto 12px; border-radius: 50%; background: var(--green); color: #052; font-style: normal; font-size: 2.4rem; font-weight: 900; box-shadow: 0 0 40px rgba(61,220,132,.6); }
     .phone .ok b { font-size: 1.1rem; }
     .plat-steps { display: grid; gap: 0; }
-    .p-step { min-height: 62vh; display: flex; flex-direction: column; justify-content: center; opacity: .28; transition: opacity .5s; }
+    .p-step { min-height: 52vh; display: flex; flex-direction: column; justify-content: center; opacity: .28; transition: opacity .5s; }
     .p-step.on { opacity: 1; }
     .p-num { font-size: .78rem; font-weight: 800; letter-spacing: .2em; color: var(--orange); }
     .p-step h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; line-height: 1.15; margin: 8px 0 10px; }
     .p-step p { color: var(--muted); max-width: 440px; }
     .plat-intro { min-height: 0; padding-top: 10vh; opacity: 1; }
+    .p-shot { display: none; }
 
     /* ══════════ DEPOIMENTOS ══════════ */
-    .dep { background: radial-gradient(ellipse 55% 45% at 50% 0%, rgba(255,120,0,0.13), transparent 70%), var(--bg); padding-left: 0; padding-right: 0; }
+    .dep { padding-left: 0; padding-right: 0; }
     .wa-rows { display: grid; gap: 16px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
     .wa-track { display: flex; width: max-content; animation: marquee 70s linear infinite; }
     .wa-track.rev { animation-direction: reverse; animation-duration: 80s; }
@@ -346,7 +354,6 @@
     .wa-time { position: absolute; right: 10px; bottom: 4px; font-size: .66rem; color: #53BDEB; }
 
     /* ══════════ EQUIPE + ONBOARDING ══════════ */
-    .team { background: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px) 0 0 / 26px 26px, var(--bg2); }
     .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
     .team-photo { position: relative; border-radius: 24px; }
     .team-photo::before { content: ''; position: absolute; inset: -16px; border-radius: 34px; background: radial-gradient(ellipse at 50% 60%, rgba(255,120,0,.35), transparent 70%); filter: blur(22px); }
@@ -364,7 +371,6 @@
     .t-item span { display: block; font-size: .86rem; color: var(--muted); margin-top: 2px; }
 
     /* ══════════ FAQ ══════════ */
-    .faq { background: var(--bg); }
     .faq-list { max-width: 820px; margin: 0 auto; display: grid; gap: 12px; }
     .faq details { border: 1px solid var(--border); border-radius: 16px; background: var(--card); overflow: hidden; transition: border-color .3s; }
     .faq details[open] { border-color: rgba(255,140,0,.5); }
@@ -376,13 +382,13 @@
     .faq .ans b { color: var(--white); }
 
     /* ══════════ FECHAMENTO ══════════ */
-    .closing { text-align: center; overflow: hidden; padding: 110px 5% 120px; background: radial-gradient(ellipse 60% 60% at 50% 45%, rgba(255,110,0,0.24), transparent 70%), var(--bg); }
+    .closing { text-align: center; overflow: hidden; padding: 110px 5% 120px; }
     .closing .bf { margin: 0 auto; max-width: 560px; }
     .closing .h2 { margin-top: 18px; }
-    .closing .price-tag { margin-top: 28px; }
+    .closing .price-tag { margin: 28px auto 0; width: auto; display: inline-flex; }
     .closing .btn { margin-top: 30px; }
     .closing small { display: block; margin-top: 16px; color: var(--muted); font-size: .8rem; }
-    footer { text-align: center; padding: 28px 5% 100px; color: rgba(255,255,255,.4); font-size: .75rem; border-top: 1px solid var(--border); background: var(--bg); }
+    footer { text-align: center; padding: 28px 5% 100px; color: rgba(255,255,255,.4); font-size: .75rem; border-top: 1px solid var(--border); }
     footer img { height: 30px; opacity: .8; margin-bottom: 10px; }
 
     /* CTA fixo no celular */
@@ -397,12 +403,18 @@
     }
     @media (max-width: 860px) {
       .hero-grid, .cupom-grid, .team-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-copy { margin: 0 auto; }
       .plat-grid { grid-template-columns: 1fr; gap: 0; }
-      .plat-stick { top: 64px; height: auto; padding: 10px 0; z-index: 2; background: linear-gradient(var(--bg2) 85%, transparent); }
-      .phone { width: 170px; border-radius: 26px; border-width: 6px; }
-      .phone::before { height: 12px; top: 5px; }
-      .p-step { min-height: 46vh; text-align: center; align-items: center; }
-      .plat-intro { padding-top: 0; min-height: 0; margin-bottom: 20px; }
+      .plat-stick { display: none; }
+      .plat-steps { gap: 14px; }
+      .p-step { min-height: 0; opacity: 1; display: grid; grid-template-columns: 96px 1fr; column-gap: 16px; row-gap: 0; align-items: center; align-content: center; text-align: left; padding: 14px; border-radius: 18px; background: var(--card); border: 1px solid var(--border); }
+      .p-step h3 { font-size: 1.1rem; margin: 4px 0 4px; }
+      .p-step p { font-size: .84rem; }
+      .p-shot { display: block; grid-row: span 3; width: 96px; aspect-ratio: 520 / 1028; border-radius: 14px; overflow: hidden; border: 3px solid #0A0A0A; outline: 1px solid rgba(255,255,255,.18); }
+      .p-shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+      .ok-shot { display: grid; place-items: center; background: #0f2a1b; }
+      .ok-shot i { font-style: normal; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--green); color: #052; font-weight: 900; font-size: 1.4rem; box-shadow: 0 0 24px rgba(61,220,132,.5); }
+      .plat-intro { display: block; padding: 0 0 10px; background: none; border: 0; text-align: center; }
     }
     @media (max-width: 640px) {
       section { padding: 70px 5%; }
@@ -412,7 +424,8 @@
       .logo { height: 28px; margin: 0 auto 4px; }
       .bf { max-width: 92%; margin: 0 auto; }
       .h1 { font-size: 1.22rem; max-width: 340px; margin: 2px auto 0; }
-      .price-tag { gap: 12px; margin-top: 14px; padding: 12px 20px 12px 16px; }
+      .price-tag { gap: 12px; margin-top: 14px; padding: 12px 20px 12px 16px; justify-content: center; }
+      .bf { width: 100%; margin: 0 auto; }
       .pt-lead { font-size: .68rem; }
       .pt-val { font-size: 2.9rem; }
       .hero-pills { display: none; }
@@ -423,8 +436,8 @@
       .tag { justify-content: center; }
       .head:not(.center) { text-align: center; }
       .head:not(.center) .lead { margin-left: auto; margin-right: auto; }
-      .cupom-side { text-align: center; }
-      .cupom-side ul { justify-items: center; }
+      .cond { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .center-cta .btn { width: 100%; }
       .r-row { font-size: .7rem; }
       .ba { min-height: 0; cursor: default; border: 0; overflow: visible; display: grid; gap: 14px; }
       .ba-side { position: relative; inset: auto; padding: 24px 20px; border-radius: 20px; border: 1px solid var(--border); align-items: flex-start !important; text-align: left !important; }
@@ -459,6 +472,7 @@
 <!-- End Google Tag Manager (noscript) -->
 
 <div class="progress" aria-hidden="true"></div>
+<div class="glows" aria-hidden="true"><i style="top:4%;left:28%"></i><i style="top:12%;left:85%"></i><i style="top:20%;left:15%"></i><i style="top:29%;left:70%"></i><i style="top:38%;left:30%"></i><i style="top:47%;left:80%"></i><i style="top:56%;left:20%"></i><i style="top:65%;left:75%"></i><i style="top:74%;left:25%"></i><i style="top:83%;left:78%"></i><i style="top:93%;left:50%"></i></div>
 
 <!-- ═════════ 1. HERO ═════════ -->
 <section class="hero" id="inicio">
@@ -587,7 +601,7 @@
   </div>
 </section>
 
-<div class="tilt-wrap"><div class="zebra tilt" aria-hidden="true"><div class="z-track"><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span></div></div></div>
+<div class="zebra" aria-hidden="true"><div class="z-track"><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span></div></div>
 
 <!-- ═════════ 2. DOR ═════════ -->
 <section class="dor" id="dor">
@@ -616,22 +630,22 @@
         <div class="fix">Grupo de WhatsApp direto com a engenharia.</div>
       </div>
     </div>
+    <div class="center-cta rv"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
   </div>
 </section>
 
 <!-- ═════════ 3. CUPOM FISCAL DA OFERTA ═════════ -->
 <section class="cupom-sec" id="oferta">
-  <div class="wrap cupom-grid">
-    <div class="cupom-side">
+  <div class="wrap">
+    <div class="head center" style="margin-bottom:28px;">
       <span class="tag rv">A oferta</span>
       <h2 class="h2 rv d1">Confere o cupom: <em>tudo isso entra.</em></h2>
-      <ul class="rv d2">
-        <li>Estrutura com <b>5 engenheiros</b></li>
-        <li><b>Sem</b> exclusividade</li>
-        <li><b>Zero</b> volume mínimo</li>
-        <li>Contrato de <b>6 meses</b></li>
-      </ul>
-      <a href="#form" class="btn rv d3" style="margin-top:30px;">Quero esse cupom →</a>
+    </div>
+    <div class="cond rv d2">
+      <div><b>5</b><span>engenheiros na estrutura</span></div>
+      <div><b>0</b><span>exclusividade</span></div>
+      <div><b>0</b><span>volume mínimo</span></div>
+      <div><b>6</b><span>meses de contrato</span></div>
     </div>
     <div class="printer" id="printer">
       <div class="printer-slot" aria-hidden="true"></div>
@@ -647,10 +661,11 @@
       </div>
       <div class="stamp-paid" aria-hidden="true">Black Friday</div>
     </div>
+    <div class="center-cta rv"><a href="#form" class="btn">Quero esse cupom →</a></div>
   </div>
 </section>
 
-<div class="zebra" aria-hidden="true"><div class="z-track rev"><span>Engenharia por <em>R$ 200/mês</em></span><span>Plataforma de projetos</span><span>Grupo de <em>WhatsApp</em></span><span>Contrato de 6 meses</span><span>Black Friday <em>Techmax</em></span><span>Engenharia por <em>R$ 200/mês</em></span><span>Plataforma de projetos</span><span>Grupo de <em>WhatsApp</em></span><span>Contrato de 6 meses</span><span>Black Friday <em>Techmax</em></span><span>Engenharia por <em>R$ 200/mês</em></span><span>Plataforma de projetos</span><span>Grupo de <em>WhatsApp</em></span><span>Contrato de 6 meses</span><span>Black Friday <em>Techmax</em></span><span>Engenharia por <em>R$ 200/mês</em></span><span>Plataforma de projetos</span><span>Grupo de <em>WhatsApp</em></span><span>Contrato de 6 meses</span><span>Black Friday <em>Techmax</em></span><span>Engenharia por <em>R$ 200/mês</em></span><span>Plataforma de projetos</span><span>Grupo de <em>WhatsApp</em></span><span>Contrato de 6 meses</span><span>Black Friday <em>Techmax</em></span><span>Engenharia por <em>R$ 200/mês</em></span><span>Plataforma de projetos</span><span>Grupo de <em>WhatsApp</em></span><span>Contrato de 6 meses</span><span>Black Friday <em>Techmax</em></span><span>Engenharia por <em>R$ 200/mês</em></span><span>Plataforma de projetos</span><span>Grupo de <em>WhatsApp</em></span><span>Contrato de 6 meses</span><span>Black Friday <em>Techmax</em></span><span>Engenharia por <em>R$ 200/mês</em></span><span>Plataforma de projetos</span><span>Grupo de <em>WhatsApp</em></span><span>Contrato de 6 meses</span><span>Black Friday <em>Techmax</em></span></div></div>
+
 
 <!-- ═════════ 4. ANTES x DEPOIS ═════════ -->
 <section class="compara" id="comparativo">
@@ -673,6 +688,7 @@
       <div class="ba-handle" aria-hidden="true"><span>⇆</span></div>
     </div>
     <p class="ba-hint">Arraste para comparar</p>
+    <div class="center-cta rv"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
   </div>
 </section>
 
@@ -708,12 +724,12 @@
       <div class="p-step plat-intro on">
         <span class="tag">A plataforma</span>
         <h2 class="h2">Cada projeto <em>na palma da mão.</em></h2>
-        <p class="lead">Role e veja o caminho de um projeto, do formulário à aprovação.</p>
+        <p class="lead">Do formulário à aprovação, tudo acompanhado em tempo real.</p>
       </div>
-      <div class="p-step on" data-screen="0"><span class="p-num">ETAPA 01</span><h3>Entrada do formulário</h3><p>Você envia os dados do cliente e a engenharia assume dali.</p></div>
-      <div class="p-step" data-screen="1"><span class="p-num">ETAPA 02</span><h3>Procuração + ART</h3><p>A documentação técnica é preparada pela equipe.</p></div>
-      <div class="p-step" data-screen="2"><span class="p-num">ETAPA 03</span><h3>Homologação em análise</h3><p>Acompanhamento direto com a distribuidora, com o status atualizado.</p></div>
-      <div class="p-step" data-screen="3"><span class="p-num">ETAPA 04</span><h3>Projeto aprovado</h3><p>Você vê na hora, no celular ou no computador. Sem precisar ligar pra ninguém.</p></div>
+      <div class="p-step on" data-screen="0"><div class="p-shot"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-entrada.webp" alt="" loading="lazy" /></div><span class="p-num">ETAPA 01</span><h3>Entrada do formulário</h3><p>Você envia os dados do cliente e a engenharia assume dali.</p></div>
+      <div class="p-step" data-screen="1"><div class="p-shot"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-procuracao.webp" alt="" loading="lazy" /></div><span class="p-num">ETAPA 02</span><h3>Procuração + ART</h3><p>A documentação técnica é preparada pela equipe.</p></div>
+      <div class="p-step" data-screen="2"><div class="p-shot"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-homologacao.webp" alt="" loading="lazy" /></div><span class="p-num">ETAPA 03</span><h3>Homologação em análise</h3><p>Acompanhamento direto com a distribuidora, com o status atualizado.</p></div>
+      <div class="p-step" data-screen="3"><div class="p-shot ok-shot"><i>✓</i></div><span class="p-num">ETAPA 04</span><h3>Projeto aprovado</h3><p>Você vê na hora, no celular ou no computador. Sem precisar ligar pra ninguém.</p></div>
     </div>
   </div>
 </section>
