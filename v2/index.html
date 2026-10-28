@@ -85,14 +85,14 @@
 
     /* ── faixa zebrada ── */
     .zebra { overflow: hidden; padding: 13px 0; border-block: 1px solid rgba(255,140,0,0.28);
-      background: repeating-linear-gradient(-45deg, rgba(255,140,0,0.11) 0 14px, transparent 14px 28px), #0A0A0A; }
+      background: rgba(255,140,0,0.14); }
     .tilt-wrap { position: relative; z-index: 3; overflow: hidden; padding: 14px 0; margin: -14px 0; }
     .zebra.tilt { transform: rotate(-1.5deg) scale(1.04); }
     .z-track { display: flex; width: max-content; animation: marquee 38s linear infinite; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; white-space: nowrap; }
     .z-track.rev { animation-direction: reverse; }
     .z-track span { display: inline-flex; align-items: center; gap: 36px; padding-right: 36px; }
     .z-track span::after { content: '◆'; color: var(--orange); font-size: 0.6rem; }
-    .z-track em { font-style: normal; color: var(--orange); }
+    .z-track em { font-style: normal; color: var(--orange-soft); }
     @keyframes marquee { to { transform: translateX(-50%); } }
 
     /* ══════════ HERO ══════════ */
