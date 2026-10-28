@@ -17,9 +17,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="//lh3.googleusercontent.com" />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" /></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -171,6 +171,8 @@
       font-size: clamp(1.5rem, 2.6vw, 2.15rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em;
       max-width: 560px; margin-top: 6px;
     }
+    .hero-title b { font-weight: 800; }
+    .hero-title .thin { font-weight: 300; }
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
     /* preço: etiqueta limpa, sem laranja sobre laranja */
@@ -661,7 +663,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <h1 class="hero-title">
         <span class="sr-only">Black Friday Techmax: </span>
-        Assessoria VIP com consultoria técnica e suporte com concessionárias
+        <b>Assessoria VIP</b> <span class="thin">com consultoria técnica e suporte com</span> <b>concessionárias.</b>
       </h1>
       <div class="price-tag" aria-label="Por apenas R$ 200 por mês">
         <span class="pt-lead">por apenas</span>
