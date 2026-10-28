@@ -115,7 +115,8 @@
       display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 56px; align-items: center;
     }
 
-    .hero-copy { position: relative; }
+    .hero-copy { position: relative; z-index: 1; }
+    #form { position: relative; z-index: 2; }
     .hero-inner > * { min-width: 0; }
     .hero-logo { height: 40px; width: auto; object-fit: contain; margin-bottom: 6px; position: relative; z-index: 2; }
 
@@ -148,7 +149,7 @@
     }
 
     /* lockup Black Friday (imagem em alta) */
-    .bf-wrap { position: relative; width: 100%; max-width: 640px; margin: 4px 0 6px -10px; }
+    .bf-wrap { position: relative; width: 100%; max-width: 640px; margin: 0 0 4px -10px; padding: 26px 0 50px; max-width: 610px; }
     .bf-wrap::before {
       content: ''; position: absolute; left: 50%; top: 50%; width: 92%; aspect-ratio: 1; transform: translate(-50%,-50%);
       border-radius: 50%; border: 3px solid rgba(255,140,0,0.5);
@@ -177,7 +178,7 @@
     }
     /* órbita 3D em volta do letreiro */
     .bf-img { position: relative; z-index: 2; }
-    .orbit-chip { position: absolute; left: 50%; top: 50%; will-change: transform, opacity; transform: translate(-50%,-50%); transition: filter 0.2s; }
+    .orbit-chip { position: absolute; left: 0; top: 0; will-change: transform, opacity; transform: translate(-50%,-50%); transition: filter 0.2s; }
     .orbit-chip.back { filter: blur(0.6px) brightness(0.75); }
     .hero-chip .ic {
       width: 32px; height: 32px; border-radius: 9px; flex-shrink: 0; color: #0A0A0A;
@@ -615,7 +616,7 @@
       .hero { padding: 22px 5% 48px; }
       .hero-logo { height: 28px; margin: 0 auto 4px; }
       .hero-copy { text-align: center; }
-      .bf-wrap { max-width: 100%; margin: 6px auto 8px; }
+      .bf-wrap { max-width: 100%; margin: 0 auto 6px; padding: 24px 0 46px; }
       .hero-chip { padding: 6px 10px 6px 6px; gap: 7px; border-radius: 11px; }
       .hero-chip .ic { width: 24px; height: 24px; border-radius: 7px; }
       .hero-chip .ic svg { width: 12px; height: 12px; }
@@ -1183,29 +1184,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   })();
 
 
-  /* ── Tags orbitando o letreiro: passam na frente e por trás ── */
+  /* ── Tags orbitando o letreiro: contornam a imagem (nunca a atravessam),
+        passam por baixo = na frente, por cima = atrás. Podem sair da tela. ── */
   (function () {
     var wrap = document.querySelector('.bf-wrap');
-    if (!wrap) return;
+    var img = wrap && wrap.querySelector('.bf-img');
+    if (!wrap || !img) return;
     var chips = [].slice.call(wrap.querySelectorAll('.orbit-chip'));
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var SPEED = 0.00035;               // rad/ms (~18s por volta)
+    var SPEED = 0.00030;               // rad/ms (~21s por volta)
+    var N = 6, K = 1.13;               // superelipse que abraça o retângulo da imagem
     var t0 = performance.now();
     function frame(now) {
-      var w = wrap.offsetWidth, h = wrap.offsetHeight;
-      var ry = h * 0.50;
+      var cx = img.offsetLeft + img.offsetWidth / 2;
+      var cy = img.offsetTop + img.offsetHeight / 2;
+      var iw = img.offsetWidth * 0.47, ih = img.offsetHeight * 0.44;   // área útil do letreiro
       chips.forEach(function (c, i) {
-        var rx = Math.max(w * 0.5 - c.offsetWidth * 0.42, w * 0.28);   // tag não sai da tela
-        var a = (reduced ? 0.6 : (now - t0) * SPEED) + i * (Math.PI * 2 / chips.length);
-        var depth = Math.sin(a);                      // -1 atrás, +1 na frente
-        var x = Math.cos(a) * rx;
-        var y = depth * ry * 0.55 - Math.cos(a) * ry * 0.18;   // elipse levemente inclinada
-        var k = (depth + 1) / 2;                      // 0..1
-        var scale = 0.78 + k * 0.32;
+        var cw = c.offsetWidth / 2, ch = c.offsetHeight / 2;
+        var W = (iw + cw + 6) * K, H = (ih + ch + 6) * K;
+        var a = (reduced ? 1.2 : (now - t0) * SPEED) + i * (Math.PI * 2 / chips.length);
+        var co = Math.cos(a), si = Math.sin(a);
+        var t = Math.pow(Math.pow(Math.abs(co / W), N) + Math.pow(Math.abs(si / H), N), -1 / N);
+        var x = cx + co * t, y = cy + si * t;
+        var k = (si + 1) / 2;                         // 0 = atrás (em cima), 1 = na frente (embaixo)
+        var scale = 0.72 + k * 0.33;
         c.style.transform = 'translate(-50%,-50%) translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) scale(' + scale.toFixed(3) + ')';
-        c.style.zIndex = depth > 0 ? 3 : 1;
-        c.style.opacity = (0.5 + k * 0.5).toFixed(2);
-        c.classList.toggle('back', depth <= 0);
+        c.style.zIndex = si > 0 ? 3 : 1;
+        c.style.opacity = (0.3 + k * 0.7).toFixed(2);
+        c.classList.toggle('back', si <= 0);
       });
       if (!reduced) requestAnimationFrame(frame);
     }
