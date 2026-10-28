@@ -598,6 +598,25 @@
     }
 
 
+
+    /* cabeçalho da oferta com foto da equipe */
+    .offer-head { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-bottom: 56px; }
+    .offer-head-txt .sec-tag, .offer-head-txt .sec-title, .offer-head-txt .sec-sub { text-align: left; }
+    .offer-photo { position: relative; margin: 0; border-radius: 22px; overflow: visible; }
+    .offer-photo::before { content: ''; position: absolute; inset: -14px; border-radius: 30px; background: radial-gradient(ellipse at 50% 60%, rgba(255,120,0,0.35), transparent 70%); filter: blur(20px); z-index: 0; }
+    .offer-photo img { position: relative; z-index: 1; display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 30%; border-radius: 22px; border: 1px solid rgba(255,140,0,0.35); box-shadow: 0 30px 60px rgba(0,0,0,0.55); }
+    .offer-photo figcaption { position: absolute; z-index: 2; left: -18px; bottom: 26px; background: rgba(12,12,12,0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,140,0,0.45); border-radius: 14px; padding: 10px 16px; box-shadow: 0 14px 30px rgba(0,0,0,0.5); }
+    .offer-photo figcaption b { display: block; font-size: 0.9rem; color: var(--orange); }
+    .offer-photo figcaption span { display: block; font-size: 0.74rem; color: var(--muted); }
+    @media (max-width: 860px) {
+      .offer-head { grid-template-columns: 1fr; gap: 28px; margin-bottom: 36px; }
+      .offer-head-txt .sec-tag, .offer-head-txt .sec-title, .offer-head-txt .sec-sub { text-align: center; }
+      .offer-photo { max-width: 460px; margin: 0 auto; width: 100%; }
+      .offer-photo img { aspect-ratio: 4 / 3; }
+      .offer-photo figcaption { position: relative; left: auto; bottom: auto; margin: -22px 14px 0; text-align: center; padding: 8px 12px; }
+      .offer-photo figcaption span { font-size: 0.7rem; }
+    }
+
     /* ══════════════════════════════
        PLATAFORMA
     ══════════════════════════════ */
@@ -923,10 +942,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ═══════════════════════════════════════ -->
 <section class="glow" id="oferta">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-tag reveal">A oferta</span>
-      <h2 class="sec-title reveal d1">O que entra na <em>Assessoria VIP</em></h2>
-      <p class="sec-sub reveal d2">Uma estrutura de engenharia completa trabalhando junto com a sua integradora, do pré-venda ao pós-instalação.</p>
+    <div class="offer-head">
+      <div class="offer-head-txt">
+        <span class="sec-tag reveal">A oferta</span>
+        <h2 class="sec-title reveal d1">O que entra na <em>Assessoria VIP</em></h2>
+        <p class="sec-sub reveal d2">Uma estrutura de engenharia completa trabalhando junto com a sua integradora, do pré-venda ao pós-instalação.</p>
+      </div>
+      <figure class="offer-photo reveal d1">
+        <img src="https://rafacamargoo.github.io/aprovacao-techmax/img/equipe-techmax.webp" alt="Equipe de engenharia da Techmax" width="900" height="900" loading="lazy" decoding="async" />
+        <figcaption><b>Gente de verdade</b><span>A equipe que trabalha junto com a sua integradora</span></figcaption>
+      </figure>
     </div>
 
     <div class="offer-grid">
