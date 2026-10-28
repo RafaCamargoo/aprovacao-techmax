@@ -168,14 +168,17 @@
       54%     { filter: drop-shadow(0 0 28px rgba(255,120,0,0.70)) drop-shadow(0 18px 30px rgba(0,0,0,0.6)); }
     }
     /* cards flutuantes de prova */
-    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
     .hero-chip {
       position: relative; z-index: 2; display: flex; align-items: center; gap: 10px;
       background: rgba(14,14,14,0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255,140,0,0.4); border-radius: 14px; padding: 9px 14px 9px 10px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255,120,0,0.12);
-      white-space: nowrap; animation: floaty 4s ease-in-out infinite;
+      white-space: nowrap;
     }
+    /* órbita 3D em volta do letreiro */
+    .bf-img { position: relative; z-index: 2; }
+    .orbit-chip { position: absolute; left: 50%; top: 50%; will-change: transform, opacity; transform: translate(-50%,-50%); transition: filter 0.2s; }
+    .orbit-chip.back { filter: blur(0.6px) brightness(0.75); }
     .hero-chip .ic {
       width: 32px; height: 32px; border-radius: 9px; flex-shrink: 0; color: #0A0A0A;
       background: linear-gradient(135deg, var(--orange), var(--orange2));
@@ -183,8 +186,6 @@
     }
     .hero-chip b { display: block; font-size: 0.92rem; font-weight: 800; line-height: 1.1; }
     .hero-chip small { display: block; font-size: 0.66rem; color: var(--muted); }
-    .hero-chip:nth-child(2) { animation-delay: 1.2s; }
-    .hero-chip:nth-child(3) { animation-delay: 0.6s; }
     @keyframes floaty { 50% { transform: translateY(-8px); } }
 
     .hero-h1 {
@@ -615,7 +616,11 @@
       .hero-logo { height: 28px; margin: 0 auto 4px; }
       .hero-copy { text-align: center; }
       .bf-wrap { max-width: 100%; margin: 6px auto 8px; }
-      .hero-chips { display: none; }
+      .hero-chip { padding: 6px 10px 6px 6px; gap: 7px; border-radius: 11px; }
+      .hero-chip .ic { width: 24px; height: 24px; border-radius: 7px; }
+      .hero-chip .ic svg { width: 12px; height: 12px; }
+      .hero-chip b { font-size: 0.76rem; }
+      .hero-chip small { font-size: 0.56rem; }
       .hero-bg img { width: 100%; height: 62%; opacity: 0.32;
         -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 100%); mask-image: linear-gradient(180deg, #000 30%, transparent 100%); }
       .hero-bg::after { background: linear-gradient(180deg, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.6) 45%, #050505 75%), radial-gradient(ellipse 80% 40% at 50% 25%, rgba(255,110,0,0.25), transparent 70%); }
@@ -698,6 +703,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img class="hero-logo" src="https://techmaxsolar.com.br/wp-content/uploads/2023/03/Techmax.png" alt="Techmax Solar" fetchpriority="high" />
       <div class="bf-wrap">
         <img class="bf-img" src="https://rafacamargoo.github.io/aprovacao-techmax/black-friday-techmax.webp" alt="Black Friday Techmax" width="1400" height="707" fetchpriority="high" decoding="async" />
+        <div class="hero-chip orbit-chip"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>+9 mil</b><small>projetos homologados</small></span></div>
+        <div class="hero-chip orbit-chip"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span><b>51</b><small>distribuidoras atendidas</small></span></div>
+        <div class="hero-chip orbit-chip"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span><span><b>5 engenheiros</b><small>na estrutura</small></span></div>
       </div>
       <h1>
         <span class="sr-only">Black Friday Techmax:</span>
@@ -718,11 +726,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Garantir minha vaga VIP
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-      </div>
-      <div class="hero-chips">
-        <div class="hero-chip"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>+9 mil</b><small>projetos homologados</small></span></div>
-        <div class="hero-chip"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span><b>51</b><small>distribuidoras atendidas</small></span></div>
-        <div class="hero-chip"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span><span><b>5 engenheiros</b><small>na estrutura</small></span></div>
       </div>
     </div>
 
@@ -1179,6 +1182,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     tick();
   })();
 
+
+  /* ── Tags orbitando o letreiro: passam na frente e por trás ── */
+  (function () {
+    var wrap = document.querySelector('.bf-wrap');
+    if (!wrap) return;
+    var chips = [].slice.call(wrap.querySelectorAll('.orbit-chip'));
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var SPEED = 0.00035;               // rad/ms (~18s por volta)
+    var t0 = performance.now();
+    function frame(now) {
+      var w = wrap.offsetWidth, h = wrap.offsetHeight;
+      var ry = h * 0.50;
+      chips.forEach(function (c, i) {
+        var rx = Math.max(w * 0.5 - c.offsetWidth * 0.42, w * 0.28);   // tag não sai da tela
+        var a = (reduced ? 0.6 : (now - t0) * SPEED) + i * (Math.PI * 2 / chips.length);
+        var depth = Math.sin(a);                      // -1 atrás, +1 na frente
+        var x = Math.cos(a) * rx;
+        var y = depth * ry * 0.55 - Math.cos(a) * ry * 0.18;   // elipse levemente inclinada
+        var k = (depth + 1) / 2;                      // 0..1
+        var scale = 0.78 + k * 0.32;
+        c.style.transform = 'translate(-50%,-50%) translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) scale(' + scale.toFixed(3) + ')';
+        c.style.zIndex = depth > 0 ? 3 : 1;
+        c.style.opacity = (0.5 + k * 0.5).toFixed(2);
+        c.classList.toggle('back', depth <= 0);
+      });
+      if (!reduced) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
 
   /* ── Scroll reveal ── */
   (function () {
