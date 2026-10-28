@@ -597,6 +597,59 @@
       .reveal { opacity: 1; transform: none; }
     }
 
+
+    /* ══════════════════════════════
+       PLATAFORMA
+    ══════════════════════════════ */
+    .plat-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; }
+    .plat-copy .sec-tag, .plat-copy .sec-title, .plat-copy .sec-sub { text-align: left; }
+    .plat-steps { list-style: none; counter-reset: ps; margin-top: 26px; display: grid; gap: 12px; }
+    .plat-steps li { counter-increment: ps; position: relative; padding: 12px 14px 12px 56px; border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,0.02); }
+    .plat-steps li::before { content: counter(ps); position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #0A0A0A; background: linear-gradient(135deg, var(--orange), var(--orange2)); }
+    .plat-steps b { display: block; font-size: 0.92rem; }
+    .plat-steps span { display: block; font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+    .plat-visual { position: relative; padding-bottom: 120px; }
+    .dash { border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background: #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.55), 0 0 60px rgba(255,110,0,0.15); transform: perspective(1400px) rotateY(-8deg) rotateX(3deg); transform-origin: left center; }
+    .dash-bar { display: flex; align-items: center; gap: 6px; padding: 8px 12px; background: #1a1a1a; }
+    .dash-bar i { width: 9px; height: 9px; border-radius: 50%; background: #444; }
+    .dash-bar i:first-child { background: #FF5F56; } .dash-bar i:nth-child(2) { background: #FFBD2E; } .dash-bar i:nth-child(3) { background: #27C93F; }
+    .dash-bar span { margin-left: 8px; font-size: 0.68rem; color: rgba(255,255,255,0.55); }
+    .dash img { display: block; width: 100%; height: auto; }
+    .phones { position: absolute; left: 6%; right: 6%; bottom: 0; display: flex; justify-content: center; align-items: flex-end; gap: 0; }
+    .phone { width: 30%; max-width: 190px; aspect-ratio: 520 / 1028; border-radius: 22px; overflow: hidden; background: #0A0A0A; border: 5px solid #0A0A0A; outline: 1px solid rgba(255,255,255,0.18); box-shadow: 0 24px 50px rgba(0,0,0,0.6); }
+    .phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .phone.p1 { transform: rotate(-7deg) translateY(18px); margin-right: -6%; }
+    .phone.p2 { position: relative; z-index: 2; width: 34%; max-width: 215px; box-shadow: 0 30px 60px rgba(0,0,0,0.7), 0 0 40px rgba(255,110,0,0.25); outline-color: rgba(255,140,0,0.5); }
+    .phone.p3 { transform: rotate(7deg) translateY(18px); margin-left: -6%; }
+
+    /* ══════════════════════════════
+       DEPOIMENTOS (estilo WhatsApp)
+    ══════════════════════════════ */
+    .wa-rows { display: grid; gap: 16px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+    .wa-track { display: flex; width: max-content; animation: marquee 70s linear infinite; }
+    .wa-track.rev { animation-direction: reverse; animation-duration: 80s; }
+    .wa-rows:hover .wa-track { animation-play-state: paused; }
+    .wa { width: 340px; margin: 0 8px; flex-shrink: 0; background: #0B141A; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 14px; background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 14px 14px; }
+    .wa-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .wa-av { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; color: #0A0A0A; background: linear-gradient(135deg, var(--orange), var(--orange2)); flex-shrink: 0; }
+    .wa-who b { display: block; font-size: 0.85rem; color: #E9EDEF; }
+    .wa-who small { display: block; font-size: 0.68rem; color: #8696A0; }
+    .wa-msg { position: relative; background: #202C33; color: #E9EDEF; border-radius: 0 12px 12px 12px; padding: 10px 12px 20px; font-size: 0.86rem; line-height: 1.5; }
+    .wa-time { position: absolute; right: 10px; bottom: 4px; font-size: 0.66rem; color: #53BDEB; }
+    @media (max-width: 860px) {
+      .plat-grid { grid-template-columns: 1fr; gap: 36px; }
+      .plat-copy .sec-tag, .plat-copy .sec-title, .plat-copy .sec-sub { text-align: center; }
+      .plat-visual { padding-bottom: 90px; }
+      .dash { transform: none; }
+    }
+    @media (max-width: 640px) {
+      .plat-visual { padding-bottom: 70px; margin: 0 -2%; }
+      .phone { border-width: 3px; border-radius: 14px; }
+      .wa { width: 280px; }
+      .wa-msg { font-size: 0.82rem; }
+      .sec-head h3.sec-title { font-size: 1.35rem !important; }
+    }
+
     /* ══════════════════════════════
        RESPONSIVO
     ══════════════════════════════ */
@@ -919,6 +972,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════
+     PLATAFORMA (prints reais, nomes de clientes borrados)
+═══════════════════════════════════════ -->
+<section class="alt" id="plataforma">
+  <div class="wrap plat-grid">
+    <div class="plat-copy">
+      <span class="sec-tag reveal">A plataforma</span>
+      <h2 class="sec-title reveal d1">Cada projeto da sua integradora, <em>na palma da mão.</em></h2>
+      <p class="sec-sub reveal d2">Você acompanha cada etapa em tempo real, do formulário à homologação aprovada, sem precisar ligar pra saber como está.</p>
+      <ol class="plat-steps reveal d2">
+        <li><b>Entrada do formulário</b><span>Você envia os dados e a engenharia assume.</span></li>
+        <li><b>Procuração + ART</b><span>Documentação técnica preparada pela equipe.</span></li>
+        <li><b>Homologação em análise</b><span>Acompanhamento direto com a distribuidora.</span></li>
+        <li><b>Projeto aprovado</b><span>Status atualizado na hora, no celular ou no computador.</span></li>
+      </ol>
+    </div>
+    <div class="plat-visual reveal d1">
+      <div class="dash">
+        <div class="dash-bar"><i></i><i></i><i></i><span>Painel de projetos · Techmax</span></div>
+        <img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-dashboard.webp" alt="Painel da plataforma Techmax com indicadores de projetos" width="1280" height="632" loading="lazy" decoding="async" />
+      </div>
+      <div class="phones">
+        <div class="phone p1"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-entrada.webp" alt="Etapa de entrada de formulário no app Techmax" width="520" height="1028" loading="lazy" decoding="async" /></div>
+        <div class="phone p2"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-homologacao.webp" alt="Etapa de homologação em análise no app Techmax" width="520" height="1028" loading="lazy" decoding="async" /></div>
+        <div class="phone p3"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-procuracao.webp" alt="Etapa de procuração e ART no app Techmax" width="520" height="1028" loading="lazy" decoding="async" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- faixa zebrada -->
 <div class="zebra" aria-hidden="true">
   <div class="zebra-track" style="animation-direction: reverse;">
@@ -1030,6 +1114,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="chip">Coelba</span><span class="chip">CEMIG</span><span class="chip">CPFL</span><span class="chip">Energisa</span><span class="chip">Enel</span><span class="chip">Equatorial</span><span class="chip">Light</span><span class="chip">Elektro</span><span class="chip">CELPE</span><span class="chip">Cosern</span><span class="chip">Celesc</span><span class="chip">CPFL Piratininga</span><span class="chip">EDP</span>
       <span class="chip" aria-hidden="true">Coelba</span><span class="chip" aria-hidden="true">CEMIG</span><span class="chip" aria-hidden="true">CPFL</span><span class="chip" aria-hidden="true">Energisa</span><span class="chip" aria-hidden="true">Enel</span><span class="chip" aria-hidden="true">Equatorial</span><span class="chip" aria-hidden="true">Light</span><span class="chip" aria-hidden="true">Elektro</span><span class="chip" aria-hidden="true">CELPE</span><span class="chip" aria-hidden="true">Cosern</span><span class="chip" aria-hidden="true">Celesc</span><span class="chip" aria-hidden="true">CPFL Piratininga</span><span class="chip" aria-hidden="true">EDP</span>
     </div>
+  </div>
+
+  <div class="wrap" style="padding:0 5%;">
+    <div class="sec-head" style="margin:64px auto 28px;">
+      <span class="sec-tag reveal">Depoimentos reais</span>
+      <h3 class="sec-title reveal d1" style="font-size:clamp(1.4rem,2.8vw,2rem);">O que as integradoras <em>mandam no nosso WhatsApp.</em></h3>
+    </div>
+  </div>
+  <div class="wa-rows" aria-label="Depoimentos de integradoras parceiras">
+    <div class="wa-track "><figure class="wa"><div class="wa-head"><span class="wa-av">R</span><span class="wa-who"><b>Rodrigo</b><small>Global</small></span></div><blockquote class="wa-msg">A parceria está sendo ótima, sempre muito atentos e nos ajudando a resolver os problemas. Esperamos continuar dessa forma esse ano e crescer juntos.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">B</span><span class="wa-who"><b>Bruno</b><small>Arcaa Energia</small></span></div><blockquote class="wa-msg">Eu quem agradeço pelo excelente trabalho. Tenho mais confiança pra vender com vocês como parceiros.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">A</span><span class="wa-who"><b>André Luiz</b><small>Del</small></span></div><blockquote class="wa-msg">Estou super satisfeito. O serviço como sempre de ótima qualidade e agilidade, a equipe está de parabéns.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">C</span><span class="wa-who"><b>Cleonice</b><small>Brave</small></span></div><blockquote class="wa-msg">O atendimento de vocês é excelente, ajudou muito nossa empresa. É ágil, sempre que precisamos vocês nos atendem prontamente. ❤️<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">I</span><span class="wa-who"><b>Integrador parceiro</b><small>nota 10</small></span></div><blockquote class="wa-msg">O que faltava para me dar mais segurança era a Techmax. Veio para ajustar e me devolver a segurança ao assumir com os clientes. Nota 10.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">N</span><span class="wa-who"><b>Neilson</b><small>Multitec</small></span></div><blockquote class="wa-msg">Para mim foi perfeito o trabalho de vocês ❤️ Vamos prospectar novos clientes e dar sequência no trabalho.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">R</span><span class="wa-who"><b>Rodrigo</b><small>Global</small></span></div><blockquote class="wa-msg">A parceria está sendo ótima, sempre muito atentos e nos ajudando a resolver os problemas. Esperamos continuar dessa forma esse ano e crescer juntos.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">B</span><span class="wa-who"><b>Bruno</b><small>Arcaa Energia</small></span></div><blockquote class="wa-msg">Eu quem agradeço pelo excelente trabalho. Tenho mais confiança pra vender com vocês como parceiros.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">A</span><span class="wa-who"><b>André Luiz</b><small>Del</small></span></div><blockquote class="wa-msg">Estou super satisfeito. O serviço como sempre de ótima qualidade e agilidade, a equipe está de parabéns.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">C</span><span class="wa-who"><b>Cleonice</b><small>Brave</small></span></div><blockquote class="wa-msg">O atendimento de vocês é excelente, ajudou muito nossa empresa. É ágil, sempre que precisamos vocês nos atendem prontamente. ❤️<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">I</span><span class="wa-who"><b>Integrador parceiro</b><small>nota 10</small></span></div><blockquote class="wa-msg">O que faltava para me dar mais segurança era a Techmax. Veio para ajustar e me devolver a segurança ao assumir com os clientes. Nota 10.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">N</span><span class="wa-who"><b>Neilson</b><small>Multitec</small></span></div><blockquote class="wa-msg">Para mim foi perfeito o trabalho de vocês ❤️ Vamos prospectar novos clientes e dar sequência no trabalho.<span class="wa-time">✓✓</span></blockquote></figure></div>
+    <div class="wa-track rev"><figure class="wa"><div class="wa-head"><span class="wa-av">J</span><span class="wa-who"><b>João Carlos</b><small>Integrador</small></span></div><blockquote class="wa-msg">Plataforma excelente, muito intuitiva. Muito obrigado pelos esclarecimentos, apresentou muito bem a plataforma.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">E</span><span class="wa-who"><b>Elvis</b><small>Integrador</small></span></div><blockquote class="wa-msg">Perfeito! Estamos satisfeitos trabalhando com vocês. Que possamos fazer uma longa parceria 🙏<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">R</span><span class="wa-who"><b>Ronen</b><small>Integrador</small></span></div><blockquote class="wa-msg">Estou gostando do atendimento Techmax, sempre me atualizando nas informações que preciso, além da agilidade nos processos.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">I</span><span class="wa-who"><b>Integrador parceiro</b><small>nota 10</small></span></div><blockquote class="wa-msg">Participei diretamente por todas as etapas. Seguro de delegar estas atividades no meu negócio 👍 Nota 10.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">J</span><span class="wa-who"><b>Jorge</b><small>Jgario Automação</small></span></div><blockquote class="wa-msg">Venho mais uma vez reconhecer a plataforma Techmax e o progresso do projeto. A satisfação do cliente está sendo fantástica. Competência e eficiência, muito obrigado 👏👏👏<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">J</span><span class="wa-who"><b>João Carlos</b><small>Integrador</small></span></div><blockquote class="wa-msg">Plataforma excelente, muito intuitiva. Muito obrigado pelos esclarecimentos, apresentou muito bem a plataforma.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">E</span><span class="wa-who"><b>Elvis</b><small>Integrador</small></span></div><blockquote class="wa-msg">Perfeito! Estamos satisfeitos trabalhando com vocês. Que possamos fazer uma longa parceria 🙏<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">R</span><span class="wa-who"><b>Ronen</b><small>Integrador</small></span></div><blockquote class="wa-msg">Estou gostando do atendimento Techmax, sempre me atualizando nas informações que preciso, além da agilidade nos processos.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">I</span><span class="wa-who"><b>Integrador parceiro</b><small>nota 10</small></span></div><blockquote class="wa-msg">Participei diretamente por todas as etapas. Seguro de delegar estas atividades no meu negócio 👍 Nota 10.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">J</span><span class="wa-who"><b>Jorge</b><small>Jgario Automação</small></span></div><blockquote class="wa-msg">Venho mais uma vez reconhecer a plataforma Techmax e o progresso do projeto. A satisfação do cliente está sendo fantástica. Competência e eficiência, muito obrigado 👏👏👏<span class="wa-time">✓✓</span></blockquote></figure></div>
   </div>
 </section>
 
