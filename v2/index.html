@@ -190,6 +190,9 @@
     .offer { position: relative; margin-top: 26px; border-radius: 20px; overflow: hidden; background: #0E0E0E; border: 1px solid rgba(255,140,0,.55);
       box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 70px rgba(255,110,0,.28); animation: offerGlow 3.2s ease-in-out infinite; }
     .offer-c { max-width: 540px; margin: 30px auto 0; text-align: left; }
+    .offer-badge { margin-left: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 10px 14px; border-radius: 12px; background: #0A0A0A; color: var(--orange); font-size: .9rem; font-weight: 900; line-height: 1.05; text-transform: uppercase; letter-spacing: .04em; box-shadow: 0 8px 20px rgba(0,0,0,.35); transform: rotate(4deg); animation: badgePop 3.2s ease-in-out infinite; }
+    .offer-badge small { font-size: .62rem; font-weight: 800; letter-spacing: .2em; color: rgba(255,255,255,.75); margin-bottom: 3px; }
+    @keyframes badgePop { 0%, 100% { transform: rotate(4deg) scale(1); } 50% { transform: rotate(2deg) scale(1.06); } }
     @keyframes offerGlow { 50% { box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 100px rgba(255,110,0,.45); } }
     .offer-top { position: relative; display: flex; align-items: center; gap: 22px; padding: 18px 26px; color: #0A0A0A; overflow: hidden;
       background: linear-gradient(115deg, #FFC24A 0%, #FF9A00 38%, #FF6A1A 78%, #FF4D1F 100%); animation: priceFlick 6s linear infinite; }
@@ -208,6 +211,7 @@
       .offer-top { justify-content: center; gap: 14px; padding: 14px 16px; }
       .offer-lead { font-size: .66rem; padding-right: 14px; }
       .offer-val { font-size: 3.5rem; }
+      .offer-badge { display: none; }
       .offer-list { gap: 9px 10px; padding: 14px 14px; }
       .offer-list li { font-size: .74rem; gap: 7px; text-align: left; }
       .offer-list li::before { width: 18px; height: 18px; font-size: .6rem; }
@@ -572,6 +576,7 @@
           <span class="offer-sheen" aria-hidden="true"></span>
           <span class="offer-lead">Por<br />apenas</span>
           <span class="offer-val"><small>R$</small>200<em>/mês</em></span>
+          <span class="offer-badge" aria-hidden="true"><small>Oferta</small>Black Friday</span>
         </div>
         <ul class="offer-list"><li>Sem exclusividade</li><li>Sem volume mínimo</li><li>Grupo de WhatsApp</li><li>Plataforma de projetos</li></ul>
       </div>
@@ -888,6 +893,7 @@
           <span class="offer-sheen" aria-hidden="true"></span>
           <span class="offer-lead">Por<br />apenas</span>
           <span class="offer-val"><small>R$</small>200<em>/mês</em></span>
+          <span class="offer-badge" aria-hidden="true"><small>Oferta</small>Black Friday</span>
         </div>
         <ul class="offer-list"><li>Sem exclusividade</li><li>Sem volume mínimo</li><li>Grupo de WhatsApp</li><li>Plataforma de projetos</li></ul>
       </div>
