@@ -134,7 +134,13 @@
     .pt-val { display: inline-flex; align-items: flex-start; font-size: clamp(3.2rem, 5.4vw, 4.6rem); font-weight: 900; line-height: .9; letter-spacing: -0.04em; white-space: nowrap; text-shadow: 0 0 24px rgba(255,140,0,0.35); }
     .pt-val small { font-size: .34em; font-weight: 800; margin: .22em 6px 0 0; letter-spacing: 0; color: rgba(255,255,255,.8); }
     .pt-val em { font-style: normal; font-size: .34em; font-weight: 700; align-self: flex-end; margin: 0 0 .3em 4px; letter-spacing: 0; color: rgba(255,255,255,.8); }
-    .hero-pills { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+    .hero-feats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 18px; }
+    .feat { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 12px 13px; border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.015)); border: 1px solid var(--border); transition: border-color .25s, transform .25s; }
+    .feat:hover { border-color: rgba(255,140,0,.45); transform: translateY(-3px); }
+    .feat-ic { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; color: var(--orange); background: rgba(255,140,0,.12); border: 1px solid rgba(255,140,0,.3); }
+    .feat-ic svg { width: 20px; height: 20px; }
+    .feat-t { font-size: .72rem; line-height: 1.25; color: var(--muted); }
+    .feat-t b { display: block; font-size: .86rem; font-weight: 700; color: var(--white); }
     .pill { justify-content: flex-start; display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,.85); background: rgba(255,255,255,0.05); border: 1px solid var(--border); }
     .pill::before { content: '✓'; color: var(--orange); font-weight: 800; }
     .hero-cta-m { display: none; }
@@ -469,7 +475,12 @@
       .bf { width: 100%; margin: 0 auto; }
       .pt-lead { font-size: .68rem; }
       .pt-val { font-size: 2.9rem; }
-      .hero-pills { display: none; }
+      .hero-feats { grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 16px; }
+      .feat { align-items: center; text-align: center; padding: 10px 4px; gap: 6px; }
+      .feat-ic { width: 30px; height: 30px; border-radius: 9px; }
+      .feat-ic svg { width: 16px; height: 16px; }
+      .feat-t { font-size: .58rem; }
+      .feat-t b { font-size: .66rem; }
       .hero-cta-m { display: block; margin-top: 16px; }
       .hero-cta-m .btn { width: 100%; }
       .form-card { padding: 22px 16px 18px; border-radius: 18px; }
@@ -532,11 +543,9 @@
         <span class="ptag-sheen" aria-hidden="true"></span><span class="ptag-hole" aria-hidden="true"></span>
         <span class="ptag-lead">Por<br />apenas</span>
         <span class="ptag-val"><small>R$</small>200<em>/mês</em></span>
-        <span class="ptag-star" aria-hidden="true"><b>VIP</b></span>
+        
       </div></div>
-      <div class="hero-pills">
-        <span class="pill">Sem exclusividade</span><span class="pill">Sem volume mínimo</span><span class="pill">Grupo de WhatsApp</span><span class="pill">Plataforma de projetos</span>
-      </div>
+      <div class="hero-feats"><div class="feat"><span class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 019.9-1"/></svg></span><span class="feat-t">Sem<b>exclusividade</b></span></div><div class="feat"><span class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.18 8.18a4 4 0 110 7.64c-2.18 0-3.82-1.64-6.18-3.82S8 8.18 5.82 8.18a4 4 0 100 7.64c2.18 0 3.82-1.64 6.18-3.82s3.82-3.82 6.18-3.82z"/></svg></span><span class="feat-t">Sem volume<b>mínimo</b></span></div><div class="feat"><span class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></span><span class="feat-t">Grupo de<b>WhatsApp</b></span></div><div class="feat"><span class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span><span class="feat-t">Plataforma de<b>projetos</b></span></div></div>
       <div class="hero-cta-m"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
     </div>
     <div id="form">
@@ -849,7 +858,7 @@
         <span class="ptag-sheen" aria-hidden="true"></span><span class="ptag-hole" aria-hidden="true"></span>
         <span class="ptag-lead">Por<br />apenas</span>
         <span class="ptag-val"><small>R$</small>200<em>/mês</em></span>
-        <span class="ptag-star" aria-hidden="true"><b>VIP</b></span>
+        
       </div></div>
     <div class="rv d3"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
     <small>Sem exclusividade · Sem volume mínimo · Contrato de 6 meses</small>
