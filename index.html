@@ -134,7 +134,13 @@
     .pt-val { display: inline-flex; align-items: flex-start; font-size: clamp(3.2rem, 5.4vw, 4.6rem); font-weight: 900; line-height: .9; letter-spacing: -0.04em; white-space: nowrap; text-shadow: 0 0 24px rgba(255,140,0,0.35); }
     .pt-val small { font-size: .34em; font-weight: 800; margin: .22em 6px 0 0; letter-spacing: 0; color: rgba(255,255,255,.8); }
     .pt-val em { font-style: normal; font-size: .34em; font-weight: 700; align-self: flex-end; margin: 0 0 .3em 4px; letter-spacing: 0; color: rgba(255,255,255,.8); }
-    .hero-pills { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+    .hero-feats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 18px; }
+    .feat { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 12px 13px; border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.015)); border: 1px solid var(--border); transition: border-color .25s, transform .25s; }
+    .feat:hover { border-color: rgba(255,140,0,.45); transform: translateY(-3px); }
+    .feat-ic { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; color: var(--orange); background: rgba(255,140,0,.12); border: 1px solid rgba(255,140,0,.3); }
+    .feat-ic svg { width: 20px; height: 20px; }
+    .feat-t { font-size: .72rem; line-height: 1.25; color: var(--muted); }
+    .feat-t b { display: block; font-size: .86rem; font-weight: 700; color: var(--white); }
     .pill { justify-content: flex-start; display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,.85); background: rgba(255,255,255,0.05); border: 1px solid var(--border); }
     .pill::before { content: '✓'; color: var(--orange); font-weight: 800; }
     .hero-cta-m { display: none; }
@@ -177,6 +183,38 @@
       .ptag-val { font-size: 3.6rem; }
       .ptag-star { width: 62px; height: 62px; right: -8px; top: -22px; }
       .ptag-star b { font-size: .82rem; }
+    }
+
+
+    /* ══════════ BLOCO ÚNICO: PREÇO + BENEFÍCIOS ══════════ */
+    .offer { position: relative; margin-top: 26px; border-radius: 20px; overflow: hidden; background: #0E0E0E; border: 1px solid rgba(255,140,0,.55);
+      box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 70px rgba(255,110,0,.28); animation: offerGlow 3.2s ease-in-out infinite; }
+    .offer-c { max-width: 540px; margin: 30px auto 0; text-align: left; }
+    .offer-badge { margin-left: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 10px 14px; border-radius: 12px; background: #0A0A0A; color: var(--orange); font-size: .9rem; font-weight: 900; line-height: 1.05; text-transform: uppercase; letter-spacing: .04em; box-shadow: 0 8px 20px rgba(0,0,0,.35); transform: rotate(4deg); animation: badgePop 3.2s ease-in-out infinite; }
+    .offer-badge small { font-size: .62rem; font-weight: 800; letter-spacing: .2em; color: rgba(255,255,255,.75); margin-bottom: 3px; }
+    @keyframes badgePop { 0%, 100% { transform: rotate(4deg) scale(1); } 50% { transform: rotate(2deg) scale(1.06); } }
+    @keyframes offerGlow { 50% { box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 100px rgba(255,110,0,.45); } }
+    .offer-top { position: relative; display: flex; align-items: center; gap: 22px; padding: 18px 26px; color: #0A0A0A; overflow: hidden;
+      background: linear-gradient(115deg, #FFC24A 0%, #FF9A00 38%, #FF6A1A 78%, #FF4D1F 100%); animation: priceFlick 6s linear infinite; }
+    .offer-sheen { position: absolute; inset: 0; pointer-events: none; }
+    .offer-sheen::before { content: ""; position: absolute; top: 0; left: -40%; width: 30%; height: 100%; background: linear-gradient(110deg, transparent, rgba(255,255,255,.6), transparent); animation: shine 3.2s ease-in-out infinite; }
+    .offer-lead { font-size: .82rem; font-weight: 900; line-height: 1.05; text-transform: uppercase; letter-spacing: .12em; padding-right: 22px; border-right: 2px dashed rgba(0,0,0,.35); }
+    .offer-val { display: inline-flex; align-items: flex-start; font-size: clamp(3.8rem, 6vw, 5.2rem); font-weight: 900; line-height: .85; letter-spacing: -.05em; }
+    .offer-val small { font-size: .3em; font-weight: 900; margin: .2em 6px 0 0; letter-spacing: 0; }
+    .offer-val em { font-style: normal; font-size: .3em; font-weight: 800; align-self: flex-end; margin: 0 0 .25em 4px; letter-spacing: 0; }
+    /* picote entre o preço e os benefícios */
+    .offer-list { position: relative; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; padding: 18px 26px 18px; border-top: 2px dashed rgba(255,140,0,.45); }
+    .offer-list li { display: flex; align-items: center; gap: 10px; font-size: .9rem; font-weight: 600; color: rgba(255,255,255,.92); }
+    .offer-list li::before { content: '✓'; flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: .72rem; font-weight: 900; color: #0A0A0A; background: var(--orange); box-shadow: 0 0 12px rgba(255,140,0,.5); }
+    @media (max-width: 640px) {
+      .offer { margin-top: 18px; border-radius: 18px; }
+      .offer-top { justify-content: center; gap: 14px; padding: 14px 16px; }
+      .offer-lead { font-size: .66rem; padding-right: 14px; }
+      .offer-val { font-size: 3.5rem; }
+      .offer-badge { display: none; }
+      .offer-list { gap: 9px 10px; padding: 14px 14px; }
+      .offer-list li { font-size: .74rem; gap: 7px; text-align: left; }
+      .offer-list li::before { width: 18px; height: 18px; font-size: .6rem; }
     }
 
     /* ══════════ FORM ══════════ */
@@ -469,7 +507,12 @@
       .bf { width: 100%; margin: 0 auto; }
       .pt-lead { font-size: .68rem; }
       .pt-val { font-size: 2.9rem; }
-      .hero-pills { display: none; }
+      .hero-feats { grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 16px; }
+      .feat { align-items: center; text-align: center; padding: 10px 4px; gap: 6px; }
+      .feat-ic { width: 30px; height: 30px; border-radius: 9px; }
+      .feat-ic svg { width: 16px; height: 16px; }
+      .feat-t { font-size: .58rem; }
+      .feat-t b { font-size: .66rem; }
       .hero-cta-m { display: block; margin-top: 16px; }
       .hero-cta-m .btn { width: 100%; }
       .form-card { padding: 22px 16px 18px; border-radius: 18px; }
@@ -528,14 +571,14 @@
         <img class="off" src="https://rafacamargoo.github.io/aprovacao-techmax/black-friday-techmax-off.webp" alt="" aria-hidden="true" width="1400" height="707" />
       </div>
       <h1 class="h1"><span class="sr-only">Black Friday Techmax: </span><b>Assessoria VIP</b> com consultoria técnica e suporte com <b>concessionárias.</b></h1>
-      <div class="ptag-wrap"><div class="ptag" aria-label="Por apenas R$ 200 por mês">
-        <span class="ptag-sheen" aria-hidden="true"></span><span class="ptag-hole" aria-hidden="true"></span>
-        <span class="ptag-lead">Por<br />apenas</span>
-        <span class="ptag-val"><small>R$</small>200<em>/mês</em></span>
-        <span class="ptag-star" aria-hidden="true"><b>VIP</b></span>
-      </div></div>
-      <div class="hero-pills">
-        <span class="pill">Sem exclusividade</span><span class="pill">Sem volume mínimo</span><span class="pill">Grupo de WhatsApp</span><span class="pill">Plataforma de projetos</span>
+      <div class="offer" aria-label="Por apenas R$ 200 por mês">
+        <div class="offer-top">
+          <span class="offer-sheen" aria-hidden="true"></span>
+          <span class="offer-lead">Por<br />apenas</span>
+          <span class="offer-val"><small>R$</small>200<em>/mês</em></span>
+          <span class="offer-badge"><small>Preço fixo</small>6 meses</span>
+        </div>
+        <ul class="offer-list"><li>Sem exclusividade</li><li>Sem volume mínimo</li><li>Grupo de WhatsApp</li><li>Plataforma de projetos</li></ul>
       </div>
       <div class="hero-cta-m"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
     </div>
@@ -845,12 +888,15 @@
       <img class="off" src="https://rafacamargoo.github.io/aprovacao-techmax/black-friday-techmax-off.webp" alt="" aria-hidden="true" width="1400" height="707" loading="lazy" />
     </div>
     <h2 class="h2 rv d1">Uma tabela para competir. <em>Uma engenharia para crescer.</em></h2>
-    <div class="ptag-wrap center rv d2"><div class="ptag" aria-label="Por apenas R$ 200 por mês">
-        <span class="ptag-sheen" aria-hidden="true"></span><span class="ptag-hole" aria-hidden="true"></span>
-        <span class="ptag-lead">Por<br />apenas</span>
-        <span class="ptag-val"><small>R$</small>200<em>/mês</em></span>
-        <span class="ptag-star" aria-hidden="true"><b>VIP</b></span>
-      </div></div>
+      <div class="offer offer-c rv d2" aria-label="Por apenas R$ 200 por mês">
+        <div class="offer-top">
+          <span class="offer-sheen" aria-hidden="true"></span>
+          <span class="offer-lead">Por<br />apenas</span>
+          <span class="offer-val"><small>R$</small>200<em>/mês</em></span>
+          <span class="offer-badge"><small>Preço fixo</small>6 meses</span>
+        </div>
+        <ul class="offer-list"><li>Sem exclusividade</li><li>Sem volume mínimo</li><li>Grupo de WhatsApp</li><li>Plataforma de projetos</li></ul>
+      </div>
     <div class="rv d3"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
     <small>Sem exclusividade · Sem volume mínimo · Contrato de 6 meses</small>
   </div>
