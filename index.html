@@ -10,8 +10,8 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Black Friday Techmax | Assessoria VIP por R$ 200/mês</title>
-  <meta name="description" content="Black Friday Techmax: Assessoria VIP com consultoria técnica, suporte com concessionárias, plataforma de projetos e grupo de WhatsApp por R$ 200/mês. Sem exclusividade e sem volume mínimo." />
+  <title>Black Friday Techmax | Assessoria VIP a partir de R$ 150/mês</title>
+  <meta name="description" content="Black Friday Techmax: Assessoria VIP com preço travado por até 12 meses. R$ 150/mês no plano anual ou R$ 200/mês no semestral. Sem exclusividade e sem volume mínimo." />
   <meta name="theme-color" content="#050505" />
   <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/16GuuORcMBCj0ptFPkQoijhlmDMBaD2yK" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -475,6 +475,184 @@
     .sticky-cta.show { transform: none; }
     .sticky-cta .btn { width: 100%; padding: 15px 18px; }
 
+
+    /* ══════════ v3 ══════════ */
+    .vagas { display: inline-flex; align-items: center; gap: 8px; margin: 2px 0 10px; padding: 6px 12px 6px 10px; border-radius: 999px; font-size: .74rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: rgba(255,255,255,.85); background: rgba(255,140,0,.1); border: 1px solid rgba(255,140,0,.4); }
+    .vagas b { color: var(--orange); font-weight: 800; }
+    .vagas i { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 0 rgba(255,140,0,.7); animation: ping 1.6s ease-out infinite; }
+    @keyframes ping { 70% { box-shadow: 0 0 0 9px rgba(255,140,0,0); } 100% { box-shadow: 0 0 0 0 rgba(255,140,0,0); } }
+    .hero-sub { font-size: .98rem; color: var(--muted); margin-top: 10px; max-width: 470px; }
+    .offer-list b { color: var(--orange); font-weight: 800; }
+
+    /* faixa de logos */
+    .logos-strip { position: relative; z-index: 2; display: flex; align-items: center; gap: 22px; padding: 16px 0 16px 5%; border-block: 1px solid var(--border); background: rgba(255,255,255,.025); }
+    .ls-label { flex-shrink: 0; font-size: .68rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+    .ls-mask { flex: 1; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+    .ls-track { display: flex; width: max-content; animation: marquee 48s linear infinite; }
+    .lg { margin-right: 44px; font-size: 1.02rem; font-weight: 800; letter-spacing: -.01em; color: rgba(255,255,255,.62); white-space: nowrap; }
+
+    /* benefícios */
+    .bgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .bcard { display: flex; flex-direction: column; gap: 6px; padding: 20px 18px; border-radius: 18px; background: var(--card); border: 1px solid var(--border); text-decoration: none; color: inherit; }
+    .bcard b { font-size: .98rem; font-weight: 700; line-height: 1.25; margin-top: 8px; }
+    .bcard span:not(.bic) { font-size: .82rem; color: var(--muted); line-height: 1.4; }
+    .bic { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; color: var(--orange); background: rgba(255,140,0,.1); border: 1px solid rgba(255,140,0,.28); }
+    .bic svg { width: 21px; height: 21px; }
+    .bcard.key { border-color: rgba(255,140,0,.45); background: linear-gradient(180deg, rgba(255,140,0,.09), var(--card) 70%); }
+    .bcta { justify-content: center; align-items: flex-start; background: linear-gradient(135deg, var(--orange), var(--orange2)); border: 0; color: #0A0A0A; }
+    .bcta b { margin-top: 0; font-size: 1.05rem; font-weight: 800; }
+    .bcta span:not(.bic) { color: #0A0A0A !important; font-weight: 700; }
+
+    /* abas */
+    .tabs { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); max-width: 720px; margin: 0 auto 30px; padding: 6px; border-radius: 16px; background: var(--card); border: 1px solid var(--border); }
+    .tab { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 10px; border: 0; background: none; cursor: pointer; font-family: inherit; font-size: .92rem; font-weight: 700; color: rgba(255,255,255,.6); border-radius: 11px; transition: color .3s; }
+    .tab span { font-size: .72rem; font-weight: 800; color: var(--orange); opacity: .8; }
+    .tab.on { color: #0A0A0A; }
+    .tab.on span { color: #0A0A0A; opacity: .7; }
+    .tab-bar { position: absolute; top: 6px; bottom: 6px; left: 6px; width: calc((100% - 12px) / 3); border-radius: 11px; background: linear-gradient(135deg, var(--orange), var(--orange2)); box-shadow: 0 8px 24px rgba(255,100,0,.35); transition: transform .45s cubic-bezier(.3,1.2,.5,1); }
+    .tab-bar::after { content: ''; position: absolute; left: 10%; right: 10%; bottom: 3px; height: 2px; border-radius: 2px; background: rgba(0,0,0,.25); transform-origin: 0 50%; transform: scaleX(var(--prog, 0)); }
+    .panels { position: relative; border-radius: 24px; background: var(--card); border: 1px solid var(--border); padding: 40px; min-height: 470px; }
+    .panel { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; animation: panelIn .5s ease; }
+    .panel[hidden] { display: none; }
+    @keyframes panelIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .p-txt h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 300; line-height: 1.15; letter-spacing: -.02em; }
+    .p-txt h3 em { font-style: normal; font-weight: 800; }
+    .ck { list-style: none; display: grid; gap: 12px; margin-top: 22px; }
+    .ck li { position: relative; padding-left: 32px; font-size: .95rem; font-weight: 500; color: rgba(255,255,255,.9); }
+    .ck li::before { content: '✓'; position: absolute; left: 0; top: 0; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: .72rem; font-weight: 900; color: #0A0A0A; background: var(--orange); }
+    .team-mini { display: flex; align-items: center; gap: 14px; margin-top: 26px; padding: 12px; border-radius: 16px; background: rgba(255,255,255,.03); border: 1px solid var(--border); }
+    .team-mini img { width: 84px; height: 64px; object-fit: cover; object-position: center 30%; border-radius: 10px; }
+    .team-mini b { display: block; font-size: .95rem; }
+    .team-mini span { display: block; font-size: .78rem; color: var(--muted); margin-top: 2px; }
+    .p-vis { display: grid; justify-items: center; gap: 10px; }
+    .wa-note { font-size: .7rem; color: rgba(255,255,255,.4); }
+    .wa-phone { width: min(340px, 100%); border-radius: 28px; overflow: hidden; background: #0B141A; border: 8px solid #0A0A0A; outline: 1px solid rgba(255,255,255,.14); box-shadow: 0 30px 60px rgba(0,0,0,.55), 0 0 60px rgba(37,211,102,.08); display: flex; flex-direction: column; }
+    .wa-top { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: #1F2C34; }
+    .wa-ava { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 900; color: #0A0A0A; background: linear-gradient(135deg, var(--orange), var(--orange2)); }
+    .wa-top b { display: block; font-size: .85rem; color: #E9EDEF; }
+    .wa-top small { display: block; font-size: .68rem; color: #8696A0; }
+    .wa-body { padding: 14px 12px 16px; display: grid; gap: 8px; background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 14px 14px; }
+    .msg { position: relative; max-width: 86%; padding: 8px 10px 18px; border-radius: 10px; font-size: .8rem; line-height: 1.4; color: #E9EDEF; opacity: 0; transform: translateY(8px); }
+    .panel.on .msg { animation: msgIn .45s ease forwards; animation-delay: var(--d); }
+    @keyframes msgIn { to { opacity: 1; transform: none; } }
+    .msg.in { justify-self: start; background: #202C33; border-top-left-radius: 2px; }
+    .msg.out { justify-self: end; background: #005C4B; border-top-right-radius: 2px; }
+    .msg time { position: absolute; right: 8px; bottom: 3px; font-size: .6rem; color: rgba(233,237,239,.55); }
+    .pl-phone { position: relative; width: min(250px, 80%); aspect-ratio: 520 / 1028; border-radius: 30px; border: 8px solid #0A0A0A; outline: 1px solid rgba(255,255,255,.16); background: #fff; overflow: visible; box-shadow: 0 30px 60px rgba(0,0,0,.6); }
+    .pl-phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 22px; display: block; }
+    .notif { position: absolute; left: -16%; right: -16%; top: 16%; display: flex; gap: 10px; align-items: center; padding: 12px 14px; border-radius: 16px; background: rgba(20,20,20,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(61,220,132,.45); box-shadow: 0 16px 40px rgba(0,0,0,.55); opacity: 0; transform: translateY(-14px) scale(.96); }
+    .panel.on .notif { animation: notifIn .6s cubic-bezier(.3,1.4,.5,1) .5s forwards; }
+    @keyframes notifIn { to { opacity: 1; transform: none; } }
+    .n-ic { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 900; color: #052; background: var(--green); }
+    .notif b { display: block; font-size: .82rem; }
+    .notif small { display: block; font-size: .74rem; color: var(--muted); }
+    .xray { width: min(440px, 100%); padding: 22px; border-radius: 20px; background: #0A0A0A; border: 1px solid var(--border); box-shadow: 0 24px 50px rgba(0,0,0,.5); }
+    .xr-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .xr-head b { font-size: 1rem; }
+    .xr-head small { font-size: .68rem; color: rgba(255,255,255,.4); }
+    .xr-row { display: grid; grid-template-columns: 1.3fr 1fr auto; gap: 12px; align-items: center; padding: 11px 0; border-top: 1px solid var(--border); font-size: .84rem; }
+    .bar { position: relative; height: 8px; border-radius: 8px; background: rgba(255,255,255,.08); overflow: hidden; }
+    .bar em { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 8px; background: linear-gradient(90deg, var(--orange2), var(--orange)); }
+    .panel.on .bar em { animation: barIn 1s ease .3s forwards; }
+    @keyframes barIn { to { width: var(--w); } }
+    .xr-row b { font-size: .72rem; padding: 3px 8px; border-radius: 999px; }
+    .xr-row .warn { color: var(--orange); background: rgba(255,140,0,.12); }
+    .xr-row .ok { color: var(--green); background: rgba(61,220,132,.12); }
+    .xr-foot { margin-top: 12px; font-size: .74rem; color: var(--muted); }
+
+    /* novos mercados */
+    .nm-sec { padding-top: 20px; padding-bottom: 20px; }
+    .nm { display: grid; grid-template-columns: 1fr 1.1fr; gap: 0; border-radius: 24px; overflow: hidden; background: var(--card); border: 1px solid var(--border); }
+    .nm-img img { display: block; width: 100%; height: 100%; object-fit: cover; min-height: 260px; }
+    .nm-txt { padding: 36px 40px; display: flex; flex-direction: column; justify-content: center; }
+    .h2.sm { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+    .nm-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 14px; }
+    .nm-chips span { padding: 8px 14px; border-radius: 999px; font-size: .84rem; font-weight: 700; border: 1px solid rgba(255,140,0,.45); background: rgba(255,140,0,.08); }
+    .nm-txt p { color: var(--muted); font-size: .92rem; }
+
+    /* parceiros */
+    .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 980px; margin: 0 auto; }
+    .pcard { margin: 0; border-radius: 20px; overflow: hidden; background: var(--card); border: 1px solid var(--border); }
+    .pcard img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 20%; }
+    .pcard figcaption { padding: 16px 18px 20px; }
+    .pcard b { display: block; font-size: 1rem; }
+    .pcard em { display: block; font-style: normal; font-size: .78rem; font-weight: 700; color: var(--orange); margin: 2px 0 8px; }
+    .pcard span { display: block; font-size: .82rem; color: var(--muted); line-height: 1.45; }
+
+    /* planos */
+    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 820px; margin: 0 auto; }
+    .plan { position: relative; display: flex; flex-direction: column; padding: 30px 28px; border-radius: 24px; background: var(--card); border: 1px solid var(--border); }
+    .plan.featured { border-color: rgba(255,140,0,.6); background: linear-gradient(180deg, rgba(255,140,0,.12), var(--card) 60%); box-shadow: 0 0 60px rgba(255,110,0,.18); }
+    .plan-flag { position: absolute; top: -12px; right: 20px; padding: 5px 12px; border-radius: 999px; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #0A0A0A; background: linear-gradient(135deg, var(--orange), var(--orange2)); }
+    .plan-name { font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.65); }
+    .plan-price { display: inline-flex; align-items: flex-start; margin-top: 10px; font-size: 3.6rem; font-weight: 900; line-height: .9; letter-spacing: -.04em; }
+    .plan.featured .plan-price { color: var(--orange); }
+    .plan-price small { font-size: .32em; margin: .2em 6px 0 0; letter-spacing: 0; }
+    .plan-price em { font-style: normal; font-size: .3em; font-weight: 700; align-self: flex-end; margin: 0 0 .3em 4px; letter-spacing: 0; color: var(--muted); }
+    .plan-per { font-size: .88rem; color: var(--muted); margin-top: 6px; }
+    .plan .ck { margin: 22px 0 26px; }
+    .plan .btn { margin-top: auto; }
+    .btn.ghost { background: transparent; color: var(--white); box-shadow: 0 0 0 1px rgba(255,140,0,.6) inset; }
+    .btn.ghost::before { display: none; }
+    .plans-note { display: flex; align-items: center; justify-content: center; gap: 8px; text-align: center; max-width: 720px; margin: 22px auto 0; font-size: .82rem; color: var(--muted); }
+    .plans-note svg { width: 18px; height: 18px; color: var(--orange); flex-shrink: 0; }
+    .plans-note b { color: var(--orange); }
+    .htable { max-width: 820px; margin: 56px auto 0; border-radius: 22px; overflow: hidden; border: 1px solid var(--border); background: var(--card); }
+    .ht-head { padding: 20px 24px; border-bottom: 1px solid var(--border); }
+    .ht-head b { display: block; font-size: 1.05rem; }
+    .ht-head span { display: block; font-size: .82rem; color: var(--muted); }
+    .ht-row { display: grid; grid-template-columns: 1.3fr 1fr 1fr; padding: 14px 24px; border-top: 1px solid var(--border); font-size: .92rem; align-items: center; }
+    .ht-row.th { border-top: 0; font-size: .7rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5); background: rgba(255,255,255,.02); }
+    .ht-row.th span:last-child { color: var(--orange); }
+    .ht-row s { color: rgba(255,255,255,.4); }
+    .ht-row b { color: var(--orange); font-size: 1.05rem; font-weight: 800; }
+    .ht-note { display: block; padding: 14px 24px 18px; font-size: .74rem; color: rgba(255,255,255,.45); border-top: 1px solid var(--border); }
+    #planos .head, #parceiros .head, #beneficios .head, #estrutura .head, .faq .head { margin-bottom: 40px; }
+
+    @media (max-width: 1024px) { .bgrid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 860px) {
+      .panel { grid-template-columns: 1fr; gap: 28px; }
+      .panels { padding: 26px 20px; min-height: 0; }
+      .nm { grid-template-columns: 1fr; }
+      .nm-img img { min-height: 0; aspect-ratio: 16 / 10; }
+      .pgrid { grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    }
+    @media (max-width: 640px) {
+      .vagas { margin: 6px auto 8px; font-size: .66rem; }
+      .hero-sub { font-size: .84rem; margin: 6px auto 0; max-width: 320px; }
+      .logos-strip { flex-direction: column; align-items: stretch; gap: 10px; padding: 14px 0; text-align: center; }
+      .ls-mask { width: 100%; }
+      .lg { font-size: .9rem; margin-right: 30px; }
+      .bgrid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .bcard { padding: 14px 12px; border-radius: 14px; }
+      .bcard b { font-size: .86rem; margin-top: 4px; }
+      .bcard span:not(.bic) { font-size: .72rem; }
+      .bic { width: 34px; height: 34px; border-radius: 10px; }
+      .bic svg { width: 17px; height: 17px; }
+      .bcta { grid-column: 1 / -1; align-items: center; text-align: center; }
+      .tabs { margin-bottom: 18px; }
+      .tab { flex-direction: column; gap: 2px; padding: 10px 4px; font-size: .74rem; }
+      .p-txt { text-align: left; }
+      .p-txt h3 { font-size: 1.35rem; }
+      .ck li { font-size: .86rem; }
+      .notif { left: -10%; right: -10%; }
+      .xr-row { grid-template-columns: 1fr 70px auto; font-size: .76rem; }
+      .nm-txt { padding: 24px 20px; text-align: center; align-items: center; }
+      .nm-chips { justify-content: center; }
+      .pgrid { grid-template-columns: 1fr; max-width: 360px; }
+      .pcard { display: grid; grid-template-columns: 110px 1fr; }
+      .pcard img { height: 100%; aspect-ratio: auto; }
+      .pcard figcaption { padding: 12px 14px; }
+      .plans { grid-template-columns: 1fr; gap: 22px; }
+      .plan { padding: 26px 20px; }
+      .plan .btn { width: 100%; }
+      .plans-note { font-size: .76rem; align-items: flex-start; text-align: left; }
+      .ht-row { grid-template-columns: 1.2fr 1fr 1fr; padding: 12px 14px; font-size: .78rem; }
+      .ht-row b { font-size: .88rem; }
+      .ht-head { padding: 16px 14px; }
+      .ht-note { padding: 12px 14px 16px; }
+    }
+
     /* ══════════ RESPONSIVO ══════════ */
     @media (max-width: 1024px) {
       .dor-grid { grid-template-columns: 1fr; }
@@ -570,15 +748,17 @@
         <img class="on" src="https://rafacamargoo.github.io/aprovacao-techmax/black-friday-techmax.webp" alt="Black Friday Techmax" width="1400" height="707" fetchpriority="high" />
         <img class="off" src="https://rafacamargoo.github.io/aprovacao-techmax/black-friday-techmax-off.webp" alt="" aria-hidden="true" width="1400" height="707" />
       </div>
-      <h1 class="h1"><span class="sr-only">Black Friday Techmax: </span><b>Assessoria VIP</b> com consultoria técnica e suporte com <b>concessionárias.</b></h1>
-      <div class="offer" aria-label="Por apenas R$ 200 por mês">
+      <span class="vagas"><i></i>Black Friday · <b>30 vagas</b></span>
+      <h1 class="h1"><span class="sr-only">Black Friday Techmax: </span>Preço de Black Friday <b>travado por até 12 meses.</b></h1>
+      <p class="hero-sub">Assessoria VIP com consultoria técnica e suporte com concessionárias.</p>
+      <div class="offer" aria-label="A partir de R$ 150 por mês no plano de 12 meses">
         <div class="offer-top">
           <span class="offer-sheen" aria-hidden="true"></span>
-          <span class="offer-lead">Por<br />apenas</span>
-          <span class="offer-val"><small>R$</small>200<em>/mês</em></span>
-          <span class="offer-badge"><small>Preço fixo</small>6 meses</span>
+          <span class="offer-lead">A partir<br />de</span>
+          <span class="offer-val"><small>R$</small>150<em>/mês</em></span>
+          <span class="offer-badge"><small>Plano</small>12 meses</span>
         </div>
-        <ul class="offer-list"><li>Sem exclusividade</li><li>Sem volume mínimo</li><li>Grupo de WhatsApp</li><li>Plataforma de projetos</li></ul>
+        <ul class="offer-list"><li><span>Ou <b>R$ 200/mês</b> por 6 meses</span></li><li><span>Tabela de homologação travada</span></li><li><span>Sem exclusividade</span></li><li><span>Sem volume mínimo</span></li></ul>
       </div>
       <div class="hero-cta-m"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
     </div>
@@ -681,187 +861,185 @@
             <p class="form-success">✓ Recebemos seus dados! Um especialista Techmax vai falar com você.</p>
           </div>
         </form>
-        <p class="form-note">Contrato de 6 meses. Projetos, homologações e ART são cobrados por demanda.</p>
+        <p class="form-note">Planos de 6 ou 12 meses. Projetos, homologações e ART são cobrados por demanda.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<div class="zebra" aria-hidden="true"><div class="z-track"><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span><span>Black Friday <em>Techmax</em></span><span>Assessoria <em>VIP</em></span><span><em>R$ 200</em>/mês</span><span>Sem exclusividade</span><span>Sem volume mínimo</span></div></div>
+<div class="logos-strip" aria-label="Integradoras que usam a Techmax">
+  <span class="ls-label">Quem já usa a Techmax</span>
+  <div class="ls-mask"><div class="ls-track"><span class="lg">77 Sol</span><span class="lg">SolarMarket</span><span class="lg">Enerzee</span><span class="lg">Revo Energia</span><span class="lg">Alba</span><span class="lg">American Energy Solar</span><span class="lg">Energizar Livre</span><span class="lg">F5 Energia Solar</span><span class="lg">G4 Energy</span><span class="lg">Grupo São Miguel</span><span class="lg">Mamutem</span><span class="lg">Solar Soares</span><span class="lg">Solarize-se</span><span class="lg">Solarizi</span><span class="lg">Sollaris</span><span class="lg">V Engenharia</span><span class="lg">Wittech Solar</span><span class="lg">WR Soluções Energéticas</span><span class="lg" aria-hidden="true">77 Sol</span><span class="lg" aria-hidden="true">SolarMarket</span><span class="lg" aria-hidden="true">Enerzee</span><span class="lg" aria-hidden="true">Revo Energia</span><span class="lg" aria-hidden="true">Alba</span><span class="lg" aria-hidden="true">American Energy Solar</span><span class="lg" aria-hidden="true">Energizar Livre</span><span class="lg" aria-hidden="true">F5 Energia Solar</span><span class="lg" aria-hidden="true">G4 Energy</span><span class="lg" aria-hidden="true">Grupo São Miguel</span><span class="lg" aria-hidden="true">Mamutem</span><span class="lg" aria-hidden="true">Solar Soares</span><span class="lg" aria-hidden="true">Solarize-se</span><span class="lg" aria-hidden="true">Solarizi</span><span class="lg" aria-hidden="true">Sollaris</span><span class="lg" aria-hidden="true">V Engenharia</span><span class="lg" aria-hidden="true">Wittech Solar</span><span class="lg" aria-hidden="true">WR Soluções Energéticas</span></div></div>
+</div>
 
-<!-- ═════════ 2. DOR ═════════ -->
-<section class="dor" id="dor">
+<!-- ═════════ 2. TUDO QUE VOCÊ RECEBE ═════════ -->
+<section id="beneficios">
   <div class="wrap">
     <div class="head center">
-      <span class="tag rv">Reconhece isso?</span>
-      <h2 class="h2 rv d1">Você vende. <em>A engenharia trava.</em></h2>
+      <span class="tag rv">Tudo que você recebe</span>
+      <h2 class="h2 rv d1">11 benefícios. <em>Uma única assessoria.</em></h2>
     </div>
-    <div class="dor-grid">
-      <div class="dor-card tilt rv">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></div>
-        <h3>Projeto que volta</h3>
-        <p>Cada concessionária com uma regra, e ninguém explica o que mudar.</p>
-        <div class="fix">Exigências de cada distribuidora resolvidas pela equipe.</div>
-      </div>
-      <div class="dor-card tilt rv d1">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-        <h3>Cliente cobrando</h3>
-        <p>O prazo corre e você não tem uma resposta clara pra dar.</p>
-        <div class="fix">Status de cada projeto em tempo real na plataforma.</div>
-      </div>
-      <div class="dor-card tilt rv d2">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><line x1="9" y1="9" x2="15" y2="9"/></svg></div>
-        <h3>Engenheiro que some</h3>
-        <p>Você manda mensagem e espera. A venda fica parada.</p>
-        <div class="fix">Grupo de WhatsApp direto com a engenharia.</div>
-      </div>
-    </div>
-    <div class="center-cta rv"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
+    <div class="bgrid"><div class="bcard tilt rv key"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></span><b>Tabela de homologação</b><span>Preço travado durante o plano</span></div><div class="bcard tilt rv d1 key"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span><b>5 engenheiros na estrutura</b><span>Documentação, regulatório e projetos</span></div><div class="bcard tilt rv d2 key"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></span><b>Atendimento prioritário</b><span>Grupo VIP no WhatsApp</span></div><div class="bcard tilt rv d3"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><b>Inteligência regulatória</b><span>Exigências interpretadas pela equipe</span></div><div class="bcard tilt rv"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span><b>Plataforma Techmax</b><span>Seus projetos em tempo real</span></div><div class="bcard tilt rv d1"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span><b>Análise de faturas</b><span>Sem limite de solicitações</span></div><div class="bcard tilt rv d2"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><b>Compensação de créditos</b><span>Apoio também no pós-venda</span></div><div class="bcard tilt rv d3"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span><b>Melhoria de processos</b><span>Menos retrabalho na operação</span></div><div class="bcard tilt rv"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg></span><b>Conselheiro Solar</b><span>Um olhar de fora sobre suas vendas</span></div><div class="bcard tilt rv d1"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5M9 8V2M15 8V2M18 8v5a6 6 0 01-12 0V8z"/></svg></span><b>Novos mercados</b><span>BESS, recarga e minigeração</span></div><div class="bcard tilt rv d2"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M10.5 7.5l-4 9M13.5 7.5l4 9M8 19h8"/></svg></span><b>Rede de parceiros</b><span>Conexões para novas oportunidades</span></div><a href="#form" class="bcard bcta rv d3"><b>Quero os 11 benefícios</b><span>Garantir minha vaga →</span></a></div>
   </div>
 </section>
 
-<!-- ═════════ 3. CUPOM FISCAL DA OFERTA ═════════ -->
-<section class="cupom-sec" id="oferta">
+<!-- ═════════ 3. A ESTRUTURA (abas 1-2-3) ═════════ -->
+<section id="estrutura">
   <div class="wrap">
-    <div class="head center" style="margin-bottom:28px;">
-      <span class="tag rv">A oferta</span>
-      <h2 class="h2 rv d1">Confere o cupom: <em>tudo isso entra.</em></h2>
+    <div class="head center">
+      <span class="tag rv">Por dentro da Assessoria VIP</span>
+      <h2 class="h2 rv d1">A engenharia das grandes do solar. <em>Agora na sua integradora.</em></h2>
     </div>
-    <div class="cond rv d2">
-      <div><b>5</b><span>engenheiros na estrutura</span></div>
-      <div><b>0</b><span>exclusividade</span></div>
-      <div><b>0</b><span>volume mínimo</span></div>
-      <div><b>6</b><span>meses de contrato</span></div>
+    <div class="tabs rv d1" role="tablist" aria-label="Como a Assessoria VIP funciona">
+      <button class="tab on" role="tab" aria-selected="true" data-tab="0"><span>01</span>Suporte técnico</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="1"><span>02</span>Plataforma</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="2"><span>03</span>Conselheiro Solar</button>
+      <i class="tab-bar" aria-hidden="true"></i>
     </div>
-    <div class="printer" id="printer">
-      <div class="printer-slot" aria-hidden="true"></div>
-      <div class="receipt-clip">
-        <div class="receipt" role="list" aria-label="Itens inclusos na Assessoria VIP">
-          <div class="r-head"><b>TECHMAX ENGENHARIA</b><span>CUPOM BLACK FRIDAY · ASSESSORIA VIP</span></div>
-          <div class="r-row" role="listitem"><span class="n">Consultoria técnica</span><span class="dots"></span><span class="v ">INCLUSO</span></div><div class="r-row" role="listitem"><span class="n">Suporte com concessionárias</span><span class="dots"></span><span class="v ">INCLUSO</span></div><div class="r-row" role="listitem"><span class="n">Análise de faturas ilimitada</span><span class="dots"></span><span class="v ">INCLUSO</span></div><div class="r-row" role="listitem"><span class="n">Plataforma de projetos</span><span class="dots"></span><span class="v ">INCLUSO</span></div><div class="r-row" role="listitem"><span class="n">Grupo de WhatsApp c/ engenharia</span><span class="dots"></span><span class="v ">INCLUSO</span></div><div class="r-row" role="listitem"><span class="n">Novos mercados (VE, BESS)</span><span class="dots"></span><span class="v ">INCLUSO</span></div><div class="r-row" role="listitem"><span class="n">Ecossistema TechmaxPlus</span><span class="dots"></span><span class="v ">INCLUSO</span></div><div class="r-row" role="listitem"><span class="n">Tabela especial homologação VIP</span><span class="dots"></span><span class="v ">INCLUSO</span></div><div class="r-row" role="listitem"><span class="n">Exclusividade</span><span class="dots"></span><span class="v zero">NÃO EXIGE</span></div><div class="r-row" role="listitem"><span class="n">Volume mínimo</span><span class="dots"></span><span class="v zero">ZERO</span></div>
-          <div class="r-sep"></div>
-          <div class="r-total"><span>TOTAL</span><b>R$ 200<small>/mês</small></b></div>
-          <div class="barcode" aria-hidden="true"></div>
-          <div class="r-foot">Contrato de 6 meses.<br />Projetos, homologações e ART cobrados por demanda.</div>
+    <div class="panels rv d2">
+      <!-- 01 suporte -->
+      <div class="panel on" role="tabpanel" data-panel="0">
+        <div class="p-txt">
+          <h3>Dúvida técnica? <em>Manda no grupo.</em></h3>
+          <ul class="ck">
+            <li>Grupo VIP no WhatsApp da sua integradora</li>
+            <li>Atendimento com a prioridade do plano</li>
+            <li>Fotos, documentos e exigências analisados pela equipe</li>
+          </ul>
+          <div class="team-mini">
+            <img src="https://rafacamargoo.github.io/aprovacao-techmax/img/equipe-techmax.webp" alt="Equipe de engenharia da Techmax" width="900" height="900" loading="lazy" />
+            <div><b>5 engenheiros na estrutura</b><span>Documentação · regulatório · projetos</span></div>
+          </div>
+        </div>
+        <div class="p-vis">
+          <div class="wa-phone">
+            <div class="wa-top"><span class="wa-ava">T</span><div><b>Techmax · VIP</b><small>Engenharia + sua equipe</small></div></div>
+            <div class="wa-body">
+              <div class="msg in" style="--d:.1s">A distribuidora pediu adequação no padrão de entrada. O que precisa mudar?<time>09:41</time></div>
+              <div class="msg out" style="--d:.9s">Manda a foto do padrão e o parecer. A gente analisa e te passa o ajuste.<time>09:44</time></div>
+              <div class="msg in" style="--d:1.7s">Cliente com 2 unidades beneficiárias. Como divido os créditos?<time>09:46</time></div>
+              <div class="msg out" style="--d:2.5s">Te mando a divisão sugerida pelo consumo de cada unidade. ✅<time>09:49</time></div>
+            </div>
+            <small class="wa-note">Simulação ilustrativa</small>
+          </div>
         </div>
       </div>
-      <div class="stamp-paid" aria-hidden="true">Black Friday</div>
-    </div>
-    <div class="center-cta rv"><a href="#form" class="btn">Quero esse cupom →</a></div>
-  </div>
-</section>
-
-
-
-<!-- ═════════ 4. ANTES x DEPOIS ═════════ -->
-<section class="compara" id="comparativo">
-  <div class="wrap">
-    <div class="head center">
-      <span class="tag rv">Faça a conta</span>
-      <h2 class="h2 rv d1">Um engenheiro CLT ou <em>uma estrutura inteira?</em></h2>
-    </div>
-    <div class="ba rv d1" id="ba" style="--pos:50%">
-      <div class="ba-side ba-old">
-        <span class="ba-label">Estrutura interna</span>
-        <div class="ba-price">R$ 12.000+<small>/mês</small></div>
-        <ul><li>1 engenheiro CLT</li><li>Encargos trabalhistas</li><li>Infraestrutura</li><li>Gestão e overhead</li><li>13º salário + férias</li></ul>
+      <!-- 02 plataforma -->
+      <div class="panel" role="tabpanel" data-panel="1" hidden>
+        <div class="p-txt">
+          <h3>Cliente perguntou do projeto? <em>Abra a plataforma.</em></h3>
+          <ul class="ck">
+            <li>Todos os projetos da sua integradora em um lugar</li>
+            <li>Etapas, documentos e histórico</li>
+            <li>Atualização de status em tempo real</li>
+          </ul>
+        </div>
+        <div class="p-vis">
+          <div class="pl-phone">
+            <img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-homologacao.webp" alt="Plataforma Techmax com etapas de homologação" loading="lazy" />
+            <div class="notif"><span class="n-ic">✓</span><div><b>Atualização do projeto</b><small>Homologação aprovada pela distribuidora.</small></div></div>
+          </div>
+          <small class="wa-note">Captura real · dados de clientes ocultados</small>
+        </div>
       </div>
-      <div class="ba-side ba-new">
-        <span class="ba-label">Assessoria VIP Techmax</span>
-        <div class="ba-price">R$ 200<small>/mês</small></div>
-        <ul><li>Estrutura com 5 engenheiros</li><li>Plataforma de projetos</li><li>Suporte técnico incluso</li><li>Grupo de WhatsApp</li><li>Sem encargos trabalhistas</li></ul>
+      <!-- 03 conselheiro -->
+      <div class="panel" role="tabpanel" data-panel="2" hidden>
+        <div class="p-txt">
+          <h3>Projetos resolvidos. <em>Agora, vender mais.</em></h3>
+          <ul class="ck">
+            <li>Diagnóstico do que trava as suas vendas</li>
+            <li>Comparação com integradoras que mais vendem</li>
+            <li>Plano de ajuste para a sua operação</li>
+          </ul>
+        </div>
+        <div class="p-vis">
+          <div class="xray">
+            <div class="xr-head"><b>Raio-X da operação</b><small>Exemplo ilustrativo</small></div>
+            <div class="xr-row"><span>Coleta de dados na venda</span><i class="bar"><em style="--w:38%"></em></i><b class="warn">Ajustar</b></div>
+            <div class="xr-row"><span>Volume de propostas</span><i class="bar"><em style="--w:55%"></em></i><b class="warn">Ajustar</b></div>
+            <div class="xr-row"><span>Passagem para a engenharia</span><i class="bar"><em style="--w:86%"></em></i><b class="ok">Ok</b></div>
+            <div class="xr-row"><span>Follow-up de propostas</span><i class="bar"><em style="--w:44%"></em></i><b class="warn">Ajustar</b></div>
+            <div class="xr-foot">Comparativo com as integradoras atendidas pela Techmax.</div>
+          </div>
+        </div>
       </div>
-      <div class="ba-handle" aria-hidden="true"><span>⇆</span></div>
     </div>
-    <p class="ba-hint">Arraste para comparar</p>
     <div class="center-cta rv"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
   </div>
 </section>
 
-<!-- ═════════ 5. NÚMEROS ═════════ -->
-<section class="nums" id="numeros">
+<!-- ═════════ 4. NOVOS MERCADOS ═════════ -->
+<section id="novos-mercados" class="nm-sec">
+  <div class="wrap">
+    <div class="nm rv">
+      <div class="nm-img"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/v3/novos-mercados.webp" alt="Carregador de veículo elétrico com armazenamento de energia" width="512" height="377" loading="lazy" /></div>
+      <div class="nm-txt">
+        <span class="tag">Novos mercados</span>
+        <h2 class="h2 sm">Vá além <em>dos painéis.</em></h2>
+        <div class="nm-chips"><span>BESS</span><span>Recarga elétrica</span><span>Minigeração</span></div>
+        <p>Orientação técnica para avaliar cada oportunidade antes de assumir a execução.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 5. PARCEIROS ═════════ -->
+<section id="parceiros">
   <div class="wrap">
     <div class="head center">
-      <span class="tag rv">Quem já confia</span>
-      <h2 class="h2 rv d1">Números de quem <em>homologa todo dia.</em></h2>
+      <span class="tag rv">Quem confia na Techmax</span>
+      <h2 class="h2 rv d1">Referências do solar. <em>Do nosso lado.</em></h2>
     </div>
-    <div class="stats">
-      <div class="stat tilt rv"><b data-count="9" data-suffix=" mil">0</b><span>Projetos realizados</span></div>
-      <div class="stat tilt rv d1"><b data-count="150" data-suffix=" MW">0</b><span>Potência homologada</span></div>
-      <div class="stat tilt rv d2"><b data-count="51">0</b><span>Distribuidoras atendidas</span></div>
-      <div class="stat tilt rv d3"><b data-count="600">0</b><span>Empresas parceiras</span></div>
-    </div>
-  </div>
-  <div class="logos" aria-label="Distribuidoras atendidas"><div class="logos-track"><span class="chip">Coelba</span><span class="chip">CEMIG</span><span class="chip">CPFL</span><span class="chip">Energisa</span><span class="chip">Enel</span><span class="chip">Equatorial</span><span class="chip">Light</span><span class="chip">Elektro</span><span class="chip">CELPE</span><span class="chip">Cosern</span><span class="chip">Celesc</span><span class="chip">CPFL Piratininga</span><span class="chip">EDP</span><span class="chip" aria-hidden="true">Coelba</span><span class="chip" aria-hidden="true">CEMIG</span><span class="chip" aria-hidden="true">CPFL</span><span class="chip" aria-hidden="true">Energisa</span><span class="chip" aria-hidden="true">Enel</span><span class="chip" aria-hidden="true">Equatorial</span><span class="chip" aria-hidden="true">Light</span><span class="chip" aria-hidden="true">Elektro</span><span class="chip" aria-hidden="true">CELPE</span><span class="chip" aria-hidden="true">Cosern</span><span class="chip" aria-hidden="true">Celesc</span><span class="chip" aria-hidden="true">CPFL Piratininga</span><span class="chip" aria-hidden="true">EDP</span></div></div>
-</section>
-
-<!-- ═════════ 6. PLATAFORMA (rolagem fixa) ═════════ -->
-<section class="plat" id="plataforma">
-  <div class="wrap plat-grid">
-    <div class="plat-stick">
-      <div class="phone" aria-hidden="true">
-        <img class="on" src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-entrada.webp" alt="" loading="lazy" />
-        <img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-procuracao.webp" alt="" loading="lazy" />
-        <img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-homologacao.webp" alt="" loading="lazy" />
-        <div class="ok"><div><i>✓</i><b>Projeto aprovado</b></div></div>
-      </div>
-    </div>
-    <div class="plat-steps">
-      <div class="p-step plat-intro on">
-        <span class="tag">A plataforma</span>
-        <h2 class="h2">Cada projeto <em>na palma da mão.</em></h2>
-        <p class="lead">Do formulário à aprovação, tudo acompanhado em tempo real.</p>
-      </div>
-      <div class="p-step on" data-screen="0"><div class="p-shot"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-entrada.webp" alt="" loading="lazy" /></div><span class="p-num">ETAPA 01</span><h3>Entrada do formulário</h3><p>Você envia os dados do cliente e a engenharia assume dali.</p></div>
-      <div class="p-step" data-screen="1"><div class="p-shot"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-procuracao.webp" alt="" loading="lazy" /></div><span class="p-num">ETAPA 02</span><h3>Procuração + ART</h3><p>A documentação técnica é preparada pela equipe.</p></div>
-      <div class="p-step" data-screen="2"><div class="p-shot"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/plat-homologacao.webp" alt="" loading="lazy" /></div><span class="p-num">ETAPA 03</span><h3>Homologação em análise</h3><p>Acompanhamento direto com a distribuidora, com o status atualizado.</p></div>
-      <div class="p-step" data-screen="3"><div class="p-shot ok-shot"><i>✓</i></div><span class="p-num">ETAPA 04</span><h3>Projeto aprovado</h3><p>Você vê na hora, no celular ou no computador. Sem precisar ligar pra ninguém.</p></div>
+    <div class="pgrid">
+      <figure class="pcard tilt rv"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/v3/luca.webp" alt="Luca Milani, 77 Sol" loading="lazy" /><figcaption><b>Luca Milani</b><em>77 Sol</em><span>Forbes Under 30. CEO de um dos maiores marketplaces de kits fotovoltaicos e crédito do Brasil.</span></figcaption></figure>
+      <figure class="pcard tilt rv d1"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/v3/gui.webp" alt="Guilherme, SolarMarket" loading="lazy" /><figcaption><b>Guilherme</b><em>SolarMarket</em><span>Uma das maiores plataformas de CRM para energia solar do país.</span></figcaption></figure>
+      <figure class="pcard tilt rv d2"><img src="https://rafacamargoo.github.io/aprovacao-techmax/img/v3/leandro.webp" alt="Leandro Beato, HDT Energy" loading="lazy" /><figcaption><b>Leandro Beato</b><em>HDT Energy</em><span>Diretor da Unidade de Negócios de Distribuição na HDT Energy.</span></figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- ═════════ 7. DEPOIMENTOS ═════════ -->
-<section class="dep" id="depoimentos">
-  <div class="wrap" style="padding:0 5%;">
+<!-- ═════════ 6. PLANOS + TABELA ═════════ -->
+<section id="planos">
+  <div class="wrap">
     <div class="head center">
-      <span class="tag rv">Depoimentos reais</span>
-      <h2 class="h2 rv d1">O que as integradoras <em>mandam no WhatsApp.</em></h2>
+      <span class="tag rv">Black Friday Techmax</span>
+      <h2 class="h2 rv d1">Escolha seu plano. <em>O preço fica travado.</em></h2>
     </div>
-  </div>
-  <div class="wa-rows" aria-label="Depoimentos de integradoras parceiras">
-    <div class="wa-track "><figure class="wa"><div class="wa-head"><span class="wa-av">R</span><span class="wa-who"><b>Rodrigo</b><small>Global</small></span></div><blockquote class="wa-msg">A parceria está sendo ótima, sempre muito atentos e nos ajudando a resolver os problemas. Esperamos continuar dessa forma esse ano e crescer juntos.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">B</span><span class="wa-who"><b>Bruno</b><small>Arcaa Energia</small></span></div><blockquote class="wa-msg">Eu quem agradeço pelo excelente trabalho. Tenho mais confiança pra vender com vocês como parceiros.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">A</span><span class="wa-who"><b>André Luiz</b><small>Del</small></span></div><blockquote class="wa-msg">Estou super satisfeito. O serviço como sempre de ótima qualidade e agilidade, a equipe está de parabéns.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">C</span><span class="wa-who"><b>Cleonice</b><small>Brave</small></span></div><blockquote class="wa-msg">O atendimento de vocês é excelente, ajudou muito nossa empresa. É ágil, sempre que precisamos vocês nos atendem prontamente. ❤️<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">I</span><span class="wa-who"><b>Integrador parceiro</b><small>nota 10</small></span></div><blockquote class="wa-msg">O que faltava para me dar mais segurança era a Techmax. Veio para ajustar e me devolver a segurança ao assumir com os clientes. Nota 10.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">N</span><span class="wa-who"><b>Neilson</b><small>Multitec</small></span></div><blockquote class="wa-msg">Para mim foi perfeito o trabalho de vocês ❤️ Vamos prospectar novos clientes e dar sequência no trabalho.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">R</span><span class="wa-who"><b>Rodrigo</b><small>Global</small></span></div><blockquote class="wa-msg">A parceria está sendo ótima, sempre muito atentos e nos ajudando a resolver os problemas. Esperamos continuar dessa forma esse ano e crescer juntos.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">B</span><span class="wa-who"><b>Bruno</b><small>Arcaa Energia</small></span></div><blockquote class="wa-msg">Eu quem agradeço pelo excelente trabalho. Tenho mais confiança pra vender com vocês como parceiros.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">A</span><span class="wa-who"><b>André Luiz</b><small>Del</small></span></div><blockquote class="wa-msg">Estou super satisfeito. O serviço como sempre de ótima qualidade e agilidade, a equipe está de parabéns.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">C</span><span class="wa-who"><b>Cleonice</b><small>Brave</small></span></div><blockquote class="wa-msg">O atendimento de vocês é excelente, ajudou muito nossa empresa. É ágil, sempre que precisamos vocês nos atendem prontamente. ❤️<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">I</span><span class="wa-who"><b>Integrador parceiro</b><small>nota 10</small></span></div><blockquote class="wa-msg">O que faltava para me dar mais segurança era a Techmax. Veio para ajustar e me devolver a segurança ao assumir com os clientes. Nota 10.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">N</span><span class="wa-who"><b>Neilson</b><small>Multitec</small></span></div><blockquote class="wa-msg">Para mim foi perfeito o trabalho de vocês ❤️ Vamos prospectar novos clientes e dar sequência no trabalho.<span class="wa-time">✓✓</span></blockquote></figure></div>
-    <div class="wa-track rev"><figure class="wa"><div class="wa-head"><span class="wa-av">J</span><span class="wa-who"><b>João Carlos</b><small>Integrador</small></span></div><blockquote class="wa-msg">Plataforma excelente, muito intuitiva. Muito obrigado pelos esclarecimentos, apresentou muito bem a plataforma.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">E</span><span class="wa-who"><b>Elvis</b><small>Integrador</small></span></div><blockquote class="wa-msg">Perfeito! Estamos satisfeitos trabalhando com vocês. Que possamos fazer uma longa parceria 🙏<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">R</span><span class="wa-who"><b>Ronen</b><small>Integrador</small></span></div><blockquote class="wa-msg">Estou gostando do atendimento Techmax, sempre me atualizando nas informações que preciso, além da agilidade nos processos.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">I</span><span class="wa-who"><b>Integrador parceiro</b><small>nota 10</small></span></div><blockquote class="wa-msg">Participei diretamente por todas as etapas. Seguro de delegar estas atividades no meu negócio 👍 Nota 10.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa"><div class="wa-head"><span class="wa-av">J</span><span class="wa-who"><b>Jorge</b><small>Jgario Automação</small></span></div><blockquote class="wa-msg">Venho mais uma vez reconhecer a plataforma Techmax e o progresso do projeto. A satisfação do cliente está sendo fantástica. Competência e eficiência, muito obrigado 👏👏👏<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">J</span><span class="wa-who"><b>João Carlos</b><small>Integrador</small></span></div><blockquote class="wa-msg">Plataforma excelente, muito intuitiva. Muito obrigado pelos esclarecimentos, apresentou muito bem a plataforma.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">E</span><span class="wa-who"><b>Elvis</b><small>Integrador</small></span></div><blockquote class="wa-msg">Perfeito! Estamos satisfeitos trabalhando com vocês. Que possamos fazer uma longa parceria 🙏<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">R</span><span class="wa-who"><b>Ronen</b><small>Integrador</small></span></div><blockquote class="wa-msg">Estou gostando do atendimento Techmax, sempre me atualizando nas informações que preciso, além da agilidade nos processos.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">I</span><span class="wa-who"><b>Integrador parceiro</b><small>nota 10</small></span></div><blockquote class="wa-msg">Participei diretamente por todas as etapas. Seguro de delegar estas atividades no meu negócio 👍 Nota 10.<span class="wa-time">✓✓</span></blockquote></figure><figure class="wa" aria-hidden="true"><div class="wa-head"><span class="wa-av">J</span><span class="wa-who"><b>Jorge</b><small>Jgario Automação</small></span></div><blockquote class="wa-msg">Venho mais uma vez reconhecer a plataforma Techmax e o progresso do projeto. A satisfação do cliente está sendo fantástica. Competência e eficiência, muito obrigado 👏👏👏<span class="wa-time">✓✓</span></blockquote></figure></div>
+    <div class="plans">
+      <div class="plan featured rv">
+        <span class="plan-flag">Melhor custo</span>
+        <span class="plan-name">Plano anual</span>
+        <div class="plan-price"><small>R$</small>150<em>/mês</em></div>
+        <span class="plan-per">durante 12 meses</span>
+        <ul class="ck"><li>Tabela travada por 12 meses</li><li>Todos os 11 benefícios</li><li>Sem exclusividade</li><li>Sem volume mínimo</li></ul>
+        <a href="#form" class="btn">Quero o plano anual →</a>
+      </div>
+      <div class="plan rv d1">
+        <span class="plan-name">Plano semestral</span>
+        <div class="plan-price"><small>R$</small>200<em>/mês</em></div>
+        <span class="plan-per">durante 6 meses</span>
+        <ul class="ck"><li>Tabela travada por 6 meses</li><li>Todos os 11 benefícios</li><li>Sem exclusividade</li><li>Sem volume mínimo</li></ul>
+        <a href="#form" class="btn ghost">Quero o plano semestral →</a>
+      </div>
+    </div>
+    <p class="plans-note rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.4 0 7-3 7-7 0-3.5-2.5-6-4-8-.5 2-1.5 3-3 3 0-3-1-6-4-8 0 4-5 7-5 13 0 4 2.6 7 9 7z"/></svg><span><b>30 vagas</b> nesta campanha. Projetos, homologações e ART são cobrados por demanda, à parte da mensalidade.</span></p>
+
+    <div class="htable rv">
+      <div class="ht-head"><b>Tabela especial de homologação</b><span>Valores travados durante o seu plano</span></div>
+      <div class="ht-grid" role="table" aria-label="Tabela de homologação por potência">
+        <div class="ht-row th" role="row"><span role="columnheader">Potência</span><span role="columnheader">Tabela anterior</span><span role="columnheader">Black Friday</span></div>
+        <div class="ht-row" role="row"><span role="cell">0,00 a 4,99 kWp</span><s role="cell">R$ 399,99</s><b role="cell">R$ 350,00</b></div>
+        <div class="ht-row" role="row"><span role="cell">5,00 a 9,99 kWp</span><s role="cell">R$ 699,99</s><b role="cell">R$ 450,00</b></div>
+        <div class="ht-row" role="row"><span role="cell">10,00 a 30,00 kWp</span><s role="cell">R$ 999,99</s><b role="cell">R$ 550,00</b></div>
+        <div class="ht-row" role="row"><span role="cell">Acima de 30,00 kWp</span><s role="cell">R$ 1.399,99</s><b role="cell">R$ 700,00</b></div>
+      </div>
+      <small class="ht-note">Valores por demanda, fora da mensalidade da Assessoria VIP. Condições conforme contrato.</small>
+    </div>
   </div>
 </section>
 
-<!-- ═════════ 8. EQUIPE + ONBOARDING ═════════ -->
-<section class="team" id="equipe">
-  <div class="wrap team-grid">
-    <div class="team-photo rv" id="teamPhoto">
-      <img src="https://rafacamargoo.github.io/aprovacao-techmax/img/equipe-techmax.webp" alt="Equipe de engenharia da Techmax" width="900" height="900" loading="lazy" />
-      <span class="name" style="left:18%">Victor Alami</span>
-      <span class="name" style="left:40%">Duda</span>
-      <span class="name" style="left:62%">Bruno Ribeiro</span>
-      <span class="name" style="left:85%">Kenji Yamaguti</span>
-    </div>
-    <div>
-      <div class="head" style="margin-bottom:0;">
-        <span class="tag rv">Como começa</span>
-        <h2 class="h2 rv d1">Em <span class="hot">menos de uma semana</span>, <em>sua engenharia rodando.</em></h2>
-      </div>
-      <div class="timeline rv d2" id="timeline">
-        <div class="bar"></div>
-        <div class="t-item" data-n="1"><b>Transferência de projetos</b><span>A equipe começa em paralelo, sem interrupção.</span></div>
-        <div class="t-item" data-n="2"><b>Conheça sua equipe</b><span>Quem faz o quê e como falar com cada um.</span></div>
-        <div class="t-item" data-n="3"><b>Plataforma + WhatsApp</b><span>Tudo em tempo real, no grupo da sua integradora.</span></div>
-        <div class="t-item" data-n="4"><b>Crescimento contínuo</b><span>Você vende mais sem precisar contratar ninguém.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═════════ 9. FAQ ═════════ -->
+<!-- ═════════ 7. FAQ ═════════ -->
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="head center">
@@ -869,17 +1047,15 @@
       <h2 class="h2 rv d1">Antes de você <em>perguntar.</em></h2>
     </div>
     <div class="faq-list">
-      <details class="rv"><summary>Preciso ter exclusividade com a Techmax?</summary><div class="ans"><b>Não.</b> Você continua livre para trabalhar com quem quiser.</div></details>
-      <details class="rv d1"><summary>Existe volume mínimo de projetos?</summary><div class="ans"><b>Não.</b> Você usa conforme vende, sem meta mínima por mês.</div></details>
-      <details class="rv d2"><summary>Os projetos estão inclusos nos R$ 200?</summary><div class="ans">Os R$ 200/mês cobrem a assessoria: consultoria técnica, suporte com concessionárias, análise de faturas, plataforma, grupo de WhatsApp e a tabela especial VIP. <b>Projetos, homologações e ART são cobrados por demanda.</b></div></details>
-      <details class="rv d3"><summary>Qual é o tempo de contrato?</summary><div class="ans"><b>6 meses</b>, com a condição fixa durante todo o período.</div></details>
-      <details class="rv d4"><summary>Como eu falo com a engenharia?</summary><div class="ans">Pelo <b>grupo de WhatsApp da sua integradora</b> e acompanhando cada projeto na plataforma.</div></details>
-      <details class="rv d4"><summary>Em quanto tempo começa?</summary><div class="ans">Em <b>menos de uma semana</b> sua engenharia já está rodando.</div></details>
+      <details class="rv"><summary>Qual plano posso contratar?</summary><div class="ans"><b>Anual:</b> R$ 150/mês por 12 meses. <b>Semestral:</b> R$ 200/mês por 6 meses. Os dois têm todos os benefícios e a tabela travada durante o período.</div></details>
+      <details class="rv d1"><summary>Projetos e homologações estão na mensalidade?</summary><div class="ans"><b>Não.</b> A mensalidade cobre a assessoria. Projetos, homologações e ART são cobrados por demanda, com os valores da tabela especial.</div></details>
+      <details class="rv d2"><summary>Preciso de exclusividade ou volume mínimo?</summary><div class="ans"><b>Não.</b> Você continua livre para trabalhar com quem quiser e usa conforme vende.</div></details>
+      <details class="rv d3"><summary>O cadastro já garante uma das 30 vagas?</summary><div class="ans">O cadastro reserva o seu contato. <b>A equipe confirma a disponibilidade</b> e apresenta o contrato do plano escolhido.</div></details>
     </div>
   </div>
 </section>
 
-<!-- ═════════ 10. FECHAMENTO ═════════ -->
+<!-- ═════════ 8. FECHAMENTO ═════════ -->
 <section class="closing" id="fechamento">
   <div class="floor" aria-hidden="true"></div>
   <div style="position:relative; z-index:2;">
@@ -888,23 +1064,14 @@
       <img class="off" src="https://rafacamargoo.github.io/aprovacao-techmax/black-friday-techmax-off.webp" alt="" aria-hidden="true" width="1400" height="707" loading="lazy" />
     </div>
     <h2 class="h2 rv d1">Uma tabela para competir. <em>Uma engenharia para crescer.</em></h2>
-      <div class="offer offer-c rv d2" aria-label="Por apenas R$ 200 por mês">
-        <div class="offer-top">
-          <span class="offer-sheen" aria-hidden="true"></span>
-          <span class="offer-lead">Por<br />apenas</span>
-          <span class="offer-val"><small>R$</small>200<em>/mês</em></span>
-          <span class="offer-badge"><small>Preço fixo</small>6 meses</span>
-        </div>
-        <ul class="offer-list"><li>Sem exclusividade</li><li>Sem volume mínimo</li><li>Grupo de WhatsApp</li><li>Plataforma de projetos</li></ul>
-      </div>
-    <div class="rv d3"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
-    <small>Sem exclusividade · Sem volume mínimo · Contrato de 6 meses</small>
+    <div class="rv d2" style="margin-top:28px;"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
+    <small>A partir de R$ 150/mês · Sem exclusividade · Sem volume mínimo · 30 vagas</small>
   </div>
 </section>
 
 <footer>
   <img src="https://techmaxsolar.com.br/wp-content/uploads/2023/03/Techmax.png" alt="Techmax Solar" loading="lazy" /><br />
-  Techmax Engenharia · Assessoria VIP Black Friday. Contrato de 6 meses. Projetos, homologações e ART são cobrados por demanda.
+  Black Friday Techmax · Assessoria VIP. Benefícios e tabela especial durante o plano contratado, conforme contrato. Projetos, homologações e ART cobrados à parte.
 </footer>
 
 <div class="sticky-cta" id="stickyCta"><a href="#form" class="btn">Garantir minha vaga VIP →</a></div>
@@ -1000,6 +1167,34 @@
       es.forEach(function (e) { if (e.isIntersecting) show(+e.target.getAttribute('data-screen')); });
     }, { rootMargin: '-45% 0px -45% 0px' });
     steps.forEach(function (s) { io.observe(s); });
+  })();
+
+
+  /* ── abas 1-2-3 da estrutura ── */
+  (function () {
+    var tabs = document.querySelectorAll('.tab'), panels = document.querySelectorAll('.panel'), bar = document.querySelector('.tab-bar');
+    if (!tabs.length) return;
+    var cur = 0, auto = !reduced, t0 = 0, DUR = 8000, started = false;
+    function show(n) {
+      cur = n;
+      tabs.forEach(function (t, i) { t.classList.toggle('on', i === n); t.setAttribute('aria-selected', i === n); });
+      panels.forEach(function (p, i) { var on = i === n; p.classList.toggle('on', on); if (on) p.removeAttribute('hidden'); else p.setAttribute('hidden', ''); });
+      bar.style.transform = 'translateX(' + (n * 100) + '%)';
+      t0 = performance.now();
+    }
+    tabs.forEach(function (t, i) { t.addEventListener('click', function () { auto = false; bar.style.setProperty('--prog', 0); show(i); }); });
+    function loop(now) {
+      if (!auto) return;
+      var k = (now - t0) / DUR; bar.style.setProperty('--prog', Math.min(1, k));
+      if (k >= 1) show((cur + 1) % tabs.length);
+      requestAnimationFrame(loop);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting && !started) { started = true; show(0); if (auto) requestAnimationFrame(loop); io.disconnect(); }
+      }, { threshold: 0.35 });
+      io.observe(document.querySelector('.panels'));
+    }
   })();
 
   /* ── inclinação dos cards acompanhando o mouse ── */
@@ -1154,7 +1349,7 @@
       volume:   val('volume'),
       objetivo: val('objetivo'),
       campanha: 'pre_black_vip',
-      oferta:   'Assessoria VIP R$ 200/mês - Black Friday',
+      oferta:   'Assessoria VIP Black Friday - R$ 150/mês (12m) ou R$ 200/mês (6m)',
       pagina:   window.location.href,
     }, getUtmParams());
 
